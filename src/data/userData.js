@@ -20,10 +20,10 @@ export const userData = {
       company: "WPP Media",
       period: "July 2022 - Present",
       highlights: [
-        "Developed Data Governance framework for Brand Lift Study leveraging Google Sheet, BigQuery and Google Data Studio/Looker for Google.",
-        "Managing teams in APAC - India, Japan, Singapore, and Australia.",
-        "Developing solutions leveraging Google Cloud Platform to optimise data operations.",
-        "Working as a Project Manager following an agile framework using Jira."
+        "Spearheaded a cohesive Data Governance framework for Brand Lift Studies, leveraging BigQuery, Google Sheets, and Looker Studio to ensure data integrity.",
+        "Directed cross-functional analytics teams across the APAC region, including India, Japan, Singapore, and Australia.",
+        "Architected and deployed scalable data solutions on Google Cloud Platform (GCP) to optimize operational efficiency.",
+        "Managed end-to-end data project lifecycles using Agile frameworks and Jira methodologies."
       ]
     },
     {
@@ -31,9 +31,9 @@ export const userData = {
       company: "iQuanti",
       period: "August 2021 - July 2022",
       highlights: [
-        "Managing a team of Data Engineers to deliver high quality deliverables.",
-        "Developing proof of concepts to exemplify best practices in ETL and data visualisation.",
-        "Worked as a solution specialist for providing solutions related to ETL and data visualisation."
+        "Led a high-performing team of Data Engineers, ensuring the delivery of robust and high-quality data products.",
+        "Pioneered proof-of-concepts to establish best-in-class ETL architectures and advanced data visualization strategies.",
+        "Acted as a core solution specialist, bridging complex ETL workflows with interactive business intelligence dashboards."
       ]
     },
     {
@@ -41,7 +41,7 @@ export const userData = {
       company: "Impelsys - American Heart Association",
       period: "October 2020 - July 2021",
       highlights: [
-        "Worked on the development of internal data tools leveraging MS Dynamics, Alteryx and AWS."
+        "Engineered scalable internal data toolchains utilizing MS Dynamics, Alteryx, and AWS cloud infrastructure."
       ]
     },
     {
@@ -49,9 +49,9 @@ export const userData = {
       company: "JPMorgan Chase (via Bahwan CyberTek)",
       period: "May 2020 - Sep 2020 | Bengaluru, India",
       highlights: [
-        "Built internal audit dashboards in Tableau, enabling leadership visibility into compliance, attrition, and recognition metrics.",
-        "Applied data analytics to solve stakeholder challenges and provide actionable recommendations.",
-        "Automated stock market reports using Python and Alteryx, cutting reporting cycles by 70%."
+        "Architected internal audit dashboards in Tableau, granting executive leadership transparent visibility into compliance, attrition, and operational metrics.",
+        "Applied advanced data analytics to address stakeholder challenges, delivering actionable insights and strategic recommendations.",
+        "Automated complex stock market reporting workflows using Python and Alteryx, aggressively reducing reporting cycle times by 70%."
       ]
     },
     {
@@ -59,11 +59,11 @@ export const userData = {
       company: "GroupM",
       period: "Oct 2019 - Mar 2020 | Gurgaon, India",
       highlights: [
-        "Designed dashboards in Tableau, Power BI, and Excel to monitor campaign effectiveness.",
-        "Delivered SEO/SEM and web analytics reporting via Adobe Analytics, Google Analytics, SEM Rush, and Search Console.",
-        "Created GCP-based prototypes to improve efficiency, later deployed at scale.",
-        "Coordinated with cross-functional teams to resolve real-time Tableau and ETL workflow issues.",
-        "Applied Agile tools (Jira, Hive, Trello) for transparent project execution."
+        "Designed comprehensive monitoring dashboards across Tableau, Power BI, and Excel to track end-to-end campaign effectiveness.",
+        "Synthesized SEO/SEM and web analytics performance metrics via Adobe Analytics, Google Analytics, and SEMRush.",
+        "Developed and scaled efficient GCP-based automation prototypes out to enterprise production environments.",
+        "Orchestrated cross-functional collaboration to troubleshoot and resolve real-time Tableau and ETL workflow bottlenecks.",
+        "Implemented Agile methodologies (Jira, Hive, Trello) to maintain transparent, high-velocity project execution."
       ]
     },
     {
@@ -71,15 +71,12 @@ export const userData = {
       company: "Omnicom Media Group",
       period: "Dec 2015 - Sep 2019 | Gurgaon, India",
       highlights: [
-        "Delivered automated dashboards and client-facing solutions, improving data accuracy and speed.",
-        "Trained account teams on analytics best practices with Alteryx, Tableau, Google Data Studio, and Python.",
-        "Developed Python utilities for AWS S3, BigQuery, Redshift, and APIs for AdWords, Bing, and Facebook.",
-        "Acted as a technical bridge between business and IT, solving client data challenges.",
-        "Conducted client training sessions on data-driven reporting and analytics.",
-        "Built data warehouses on BigQuery and Redshift, centralizing analytics for global accounts.",
-        "Designed KPI-based report templates for onboarding new clients.",
-        "Transitioned manual Excel reporting into the Annalect Insights Platform, improving efficiency.",
-        "Conducted UAT for APIs and internal tools before rollout."
+        "Delivered automated client-facing dashboards, significantly improving data accuracy and reporting agility.",
+        "Trained internal account teams on enterprise analytics best practices (Alteryx, Tableau, Google Data Studio, Python).",
+        "Engineered robust Python utilities for AWS S3, BigQuery, and Redshift, alongside integrations for major Ad APIs.",
+        "Acted as the primary technical liaison between business units and IT, resolving complex client data challenges.",
+        "Architected centralized global data warehouses utilizing scalable infrastructure on BigQuery and Redshift.",
+        "Transitioned legacy manual Excel reporting pipelines into the automated Annalect Insights Platform."
       ]
     },
     {
@@ -87,9 +84,9 @@ export const userData = {
       company: "Prime Technologies India",
       period: "Mar 2014 - Sep 2015 | Gurgaon, India",
       highlights: [
-        "Founded a technology venture specializing in ERP development.",
-        "Managed full product lifecycle from requirements gathering to deployment.",
-        "Delivered customized ERP solutions to local businesses, gaining hands-on entrepreneurial experience."
+        "Founded and bootstrapped a technology venture specializing in custom ERP platform development.",
+        "Directed the full product lifecycle, from initial requirement gathering through to continuous deployment.",
+        "Delivered bespoke ERP solutions to local enterprises, executing hands-on architectural and entrepreneurial leadership."
       ]
     }
   ],
