@@ -1,6 +1,7 @@
 import React from 'react';
 import { userData } from '../data/userData';
-import { Terminal, Database, Code, Cloud, Cpu, Briefcase, GraduationCap } from 'lucide-react';
+import { Terminal, Database, Code, Cloud, Cpu, Briefcase, GraduationCap, Users, BookOpen, ExternalLink, Star } from 'lucide-react';
+import profileImg from '../assets/images/profile.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -36,18 +37,22 @@ const Home = () => {
             </a>
           </div>
         </div>
+        
+        <div className="hero-image-wrapper">
+          <img src={profileImg} alt="Nayan Singh Profile" className="hero-image" />
+        </div>
       </section>
 
-      <div className="grid grid-cols-2">
+      <div className="dashboard-grid mt-12">
         {/* Experience Section */}
-        <section className="experience-section glass-panel">
+        <section className="experience-section glass-panel block-experience">
           <div className="section-header">
             <Briefcase className="accent-icon" />
             <h3 className="font-mono">Experience_Log</h3>
           </div>
           
           <div className="timeline">
-            {userData.experience.slice(0, 3).map((exp, index) => (
+            {userData.experience.map((exp, index) => (
               <div key={index} className="timeline-item hover-glow">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
@@ -58,7 +63,7 @@ const Home = () => {
                     <span className="period font-mono text-muted">{exp.period}</span>
                   </div>
                   <ul className="highlights text-secondary">
-                    {exp.highlights.slice(0, 2).map((highlight, i) => (
+                    {exp.highlights.map((highlight, i) => (
                       <li key={i}>{highlight}</li>
                     ))}
                   </ul>
@@ -68,8 +73,39 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Publications Section */}
+        <section className="publications-section glass-panel block-publications">
+          <div className="section-header">
+            <BookOpen className="accent-icon-alt text-accent-purple" />
+            <h3 className="font-mono">Publications</h3>
+          </div>
+          <div className="flex flex-col gap-4">
+            {userData.publications.map((pub, index) => (
+              <div key={index} className="publication-card bg-bg-tertiary border border-glass-border rounded-lg p-5 relative overflow-hidden group">
+                <div className="publication-badge font-mono text-xs flex items-center gap-1 mb-3 text-accent-purple">
+                  <Star size={12} className="fill-current" />
+                  <span>FEATURED PUBLICATION</span>
+                </div>
+                <h4 className="text-xl text-primary font-bold mb-3 leading-tight group-hover:text-accent-purple transition-colors">{pub.title}</h4>
+                
+                <div className="publication-desc-container my-4">
+                  <p className="text-secondary text-sm leading-relaxed whitespace-pre-line">
+                    {pub.description}
+                  </p>
+                </div>
+                
+                <a href={pub.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full justify-center mt-2 group-hover:shadow-[0_0_15px_rgba(189,0,255,0.4)] transition-all">
+                  <BookOpen size={16} />
+                  <span>Get it on Amazon</span>
+                  <ExternalLink size={14} className="ml-1 opacity-70" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Skills Section */}
-        <section className="skills-section glass-panel">
+        <section className="skills-section glass-panel block-skills">
           <div className="section-header">
             <Cpu className="accent-icon-alt" />
             <h3 className="font-mono">Tech_Stack</h3>
@@ -108,6 +144,35 @@ const Home = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Volunteering Section */}
+        <section className="volunteering-section glass-panel block-volunteering">
+          <div className="section-header">
+            <Users className="accent-icon" />
+            <h3 className="font-mono">Volunteering_Log</h3>
+          </div>
+          
+          <div className="timeline">
+            {userData.volunteering.map((vol, index) => (
+              <div key={index} className="timeline-item hover-glow">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <h4 className="role text-primary font-mono">{vol.role}</h4>
+                  <div className="company-info text-secondary mb-2">
+                    <span className="company">{vol.organization}</span>
+                    <span className="separator">|</span>
+                    <span className="period font-mono text-muted">{vol.period}</span>
+                  </div>
+                  {vol.description && (
+                    <p className="text-secondary text-sm mt-2 leading-relaxed">
+                      {vol.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </div>

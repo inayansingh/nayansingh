@@ -1,6 +1,40 @@
 .hero-section {
   padding: 4rem 0 6rem;
-  max-width: 800px;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image-wrapper {
+  flex-shrink: 0;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--glass-border);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15), 
+              inset 0 0 25px rgba(0, 240, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.hero-image-wrapper:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.35), 
+              inset 0 0 35px rgba(0, 240, 255, 0.35);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .terminal-badge {
@@ -39,9 +73,24 @@
   gap: 1rem;
 }
 
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  .block-experience { grid-column: 1 / 2; grid-row: 1 / span 3; }
+  .block-publications { grid-column: 2 / 3; grid-row: 1; }
+  .block-skills { grid-column: 2 / 3; grid-row: 2; }
+  .block-volunteering { grid-column: 2 / 3; grid-row: 3; }
+}
+
 /* Section styling */
-.experience-section, .skills-section {
-  padding: 2rem;
+.dashboard-grid .glass-panel {
+  padding: 2.5rem 2rem;
 }
 
 .section-header {
@@ -136,6 +185,20 @@
   color: var(--accent-cyan);
   font-family: 'Fira Code', monospace;
 }
+/* Publication Card Styling */
+.publication-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(189, 0, 255, 0.1);
+}
+
+.publication-badge {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
 /* Tags */
 .skill-groups {
@@ -226,6 +289,7 @@
 .line-clamp-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -238,5 +302,19 @@
 @media (max-width: 768px) {
   .hero-title { font-size: 2.5rem; }
   .hero-subtitle { font-size: 1.5rem; }
-  .grid { grid-template-columns: 1fr; }
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  .dashboard-grid { 
+    grid-template-columns: 1fr; 
+  }
 }

@@ -46,23 +46,84 @@ export const userData = {
     },
     {
       role: "Senior Software Analyst",
-      company: "Bahwan CyberTek Consulting - JPMorgan Chase & Co",
-      period: "May 2020 - October 2020",
+      company: "JPMorgan Chase (via Bahwan CyberTek)",
+      period: "May 2020 - Sep 2020 | Bengaluru, India",
       highlights: [
-        "Developing internal audit dashboard for Managers.",
-        "Solving management problems leveraging data analytics and Tableau.",
-        "Automating manual stock market reports for BAU teams using Alteryx and Python."
+        "Built internal audit dashboards in Tableau, enabling leadership visibility into compliance, attrition, and recognition metrics.",
+        "Applied data analytics to solve stakeholder challenges and provide actionable recommendations.",
+        "Automated stock market reports using Python and Alteryx, cutting reporting cycles by 70%."
       ]
     },
     {
-      role: "Media Activation Manager",
+      role: "Media Technology Manager",
       company: "GroupM",
-      period: "October 2019 - March 2020",
+      period: "Oct 2019 - Mar 2020 | Gurgaon, India",
       highlights: [
-        "Created Analytics Dashboards in Excel, Tableau and Power BI.",
-        "Responsible for Cleaning, Manipulating, and Processing large datasets along with EDA, Data modelling, and Enterprise deployment using BigQuery or Redshift.",
-        "Created scalable application prototypes to drive efficiency and enterprise deployment in GCP."
+        "Designed dashboards in Tableau, Power BI, and Excel to monitor campaign effectiveness.",
+        "Delivered SEO/SEM and web analytics reporting via Adobe Analytics, Google Analytics, SEM Rush, and Search Console.",
+        "Created GCP-based prototypes to improve efficiency, later deployed at scale.",
+        "Coordinated with cross-functional teams to resolve real-time Tableau and ETL workflow issues.",
+        "Applied Agile tools (Jira, Hive, Trello) for transparent project execution."
       ]
+    },
+    {
+      role: "Analyst → Senior Associate → Analyst",
+      company: "Omnicom Media Group",
+      period: "Dec 2015 - Sep 2019 | Gurgaon, India",
+      highlights: [
+        "Delivered automated dashboards and client-facing solutions, improving data accuracy and speed.",
+        "Trained account teams on analytics best practices with Alteryx, Tableau, Google Data Studio, and Python.",
+        "Developed Python utilities for AWS S3, BigQuery, Redshift, and APIs for AdWords, Bing, and Facebook.",
+        "Acted as a technical bridge between business and IT, solving client data challenges.",
+        "Conducted client training sessions on data-driven reporting and analytics.",
+        "Built data warehouses on BigQuery and Redshift, centralizing analytics for global accounts.",
+        "Designed KPI-based report templates for onboarding new clients.",
+        "Transitioned manual Excel reporting into the Annalect Insights Platform, improving efficiency.",
+        "Conducted UAT for APIs and internal tools before rollout."
+      ]
+    },
+    {
+      role: "Founder",
+      company: "Prime Technologies India",
+      period: "Mar 2014 - Sep 2015 | Gurgaon, India",
+      highlights: [
+        "Founded a technology venture specializing in ERP development.",
+        "Managed full product lifecycle from requirements gathering to deployment.",
+        "Delivered customized ERP solutions to local businesses, gaining hands-on entrepreneurial experience."
+      ]
+    }
+  ],
+  volunteering: [
+    {
+      role: "Volunteer",
+      organization: "National Service Scheme, IITD",
+      period: "Oct 2011 - Nov 2013",
+      domain: "Environment",
+      description: "I experienced my journey of NSS campaign of my college as volunteer where I took active participation in providing social services to remote areas."
+    },
+    {
+      role: "Vice Chairperson",
+      organization: "Indian Engineers Association",
+      period: "Oct 2013 - Jun 2015",
+      domain: "Science and Technology",
+      description: ""
+    },
+    {
+      role: "Delegate",
+      organization: "FICCI",
+      period: "May 2013",
+      domain: "Science and Technology",
+      description: "The objective of the conference was to bring awareness about latest Technologies, security challenges, fair use of technology and issues of capacity building for mitigating the risks. It was a good learning experience for the participants to interact with various Scholars, Policymakers, Technology Experts, Venture Capitalists etc."
+    }
+  ],
+  publications: [
+    {
+      title: "The Ethical Analyst: Balancing Data and Conscience",
+      description: `In an era where data powers decision-making, the ethical analyst emerges as a crucial guardian of principles, bridging the chasm between data-driven insights and moral responsibility. "The Ethical Analyst: Balancing Data and Conscience" takes you on a transformative journey through the rapidly evolving landscape of data analytics, revealing the profound impact of ethical considerations in this digital age.
+
+As data becomes the lifeblood of industries, governments, and organizations, the ethical analyst stands at the crossroads of data's potential and its perils. This thought-provoking book explores the ethical dilemmas and challenges that data professionals face, offering insights into how they can navigate the intricate terrain of data analysis with integrity and purpose.`,
+      link: "https://www.amazon.com/dp/B0CJWWB5YL?ref_=cm_sw_r_mwn_dp_GCKARDM7DAYG20882P4F_1",
+      icon: "amazon"
     }
   ],
   education: [
