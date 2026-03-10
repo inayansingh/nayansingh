@@ -132,34 +132,39 @@ As data becomes the lifeblood of industries, governments, and organizations, the
   ],
   recommendations: [
     {
-      name: "Manii Manchanda",
-      role: "Entrepreneur | Building Purpose-Driven Brands",
-      text: "Nayan is exceptionally smart, passionate and diligent about his work. He's the go-to person for some of the most critical projects on the team. In a short span of his career, he has become an invaluable contributor to the team's success..."
-    },
-    {
-      name: "Brad Warthan, MBA",
-      role: "Executive Marketing Analytics and Business Intelligence Professional",
-      text: "It's been my distinct pleasure to have worked with Nayan Singh for the past two years. Nayan is a brilliant BI developer and data analyst and has one of the strongest work ethics that I know..."
+      name: "Vivek Somashekar Avverahalli",
+      role: "Senior BI Engineer at Vituity",
+      text: "“I’m amazed by Nayan’s ability to Alteryx, a skill he uses to his benefit when making presentations to clients and colleagues.\nHe is a highly focused person as well as analytical and can add to any team he is a part of.\nHis energy to make things happen was contagious and it helped us achieve great goals. One of the best analysts we had for sure.”"
     },
     {
       name: "Tim Nolan",
       role: "Head of Data Ops",
-      text: "Nayan is one of the most outstanding individuals I have worked with at my time with Omnicom. His attention to detail for data management, structure and processing set him apart. He is able to take complex requests and distill them into easy to digest, functional outputs..."
+      text: "Nayan is one of the most outstanding individuals I have worked with at my time with Omnicom. There were a number of projects and engagements that I had the fortune of overseeing with Nayan. His attention to detail for data management, structure and processing set him apart. He is able to take complex requests and distill them into easy to digest, functional outputs.\n\nHe took over the execution of a competitive dashboard for a very demanding client. From the moment he was on the project, he looked at the challenge differently and was able to deliver in under a week. Both the approach and the visualization were excellent and the client was extremely satisfied with the work.\n\nDue to Nayan's abilities, he become lead for a project that there were very few individuals in the company would be able to handle. Nayan's ability to understand the complex requirements and translate that into delivery were nothing short of outstanding. He communicated efficiently and effectively, ensure he understood the demands and delivered in appropriate timelines. Nayan was able to meet and exceed expectations in an extremely technical way. He departed the organization around that time and left very big shoes to fill.\n\nI highly recommend Nayan for his outstanding ability to communicate and understand challenging concepts in an easily digestible way. His technical abilities in a number of capacities are outstanding from Tableau development to visualization to SQL/Python. Nayan can deliver on what he sets out to, which is an extremely rare quality. I definitely hope that I have the opportunity to work with Nayan again in the future."
     },
     {
       name: "Zach Stein",
       role: "Senior Director, Client Business Solutions @ OMD USA",
-      text: "Nayan and I have worked together on a few large projects for my client – mostly regarding overseeing dashboard and report building for internal and external purposes. Each project, it has been a pleasure working with Nayan..."
+      text: "Nayan and I have worked together on a few large projects for my client – mostly regarding overseeing dashboard and report building for internal and external purposes. Each project, it has been a pleasure working with Nayan. He communicates well, always understands our needs, and if changes need to be made, he manages the team to ensure they are done quickly. On top of that, he’s always polite and precise during our meetings. The output of the products that we’ve worked together on has always been amazing. To be specific, one project helped save our client millions of dollars due to time and resources saved."
     },
     {
       name: "Manuela Leme",
       role: "Data & Analytics | Campaign Reporting & Measurement",
-      text: "I had the pleasure of working with Nayan at a project a few years ago, and that was such a great experience. He is a hard worker, very attentive to detail, and extremely reliable."
+      text: "I had the pleasure of working with Nayan at a project a few years ago, and that was such a great experience. He is a hard worker, very attentive to detail, and extremely reliable. Nayan is the kind of person you want to have at any workplace because, in addition to being great at his job, he is also very polite, self-motivated, and brings great energy. I miss working with him but am sure he is on to great things!"
+    },
+    {
+      name: "Manii Manchanda",
+      role: "Entrepreneur | Building Purpose-Driven Brands",
+      text: "Nayan is exceptionally smart, passionate and diligent about his work. He’s the go-to person for some of the most critical projects on the team. In a short span of his career, he has become an invaluable contributor to the team’s success, thanks to his hard work and dedication.\nI believe it’s important to have self starters in the team who can be relied on in times of urgency, he’s that one person for me on my team!"
+    },
+    {
+      name: "Brad Warthan, MBA",
+      role: "Executive Marketing Analytics and Business Intelligence Professional",
+      text: "It's been my distinct pleasure to have worked with Nayan Singh for the past two years. Nayan is a brilliant BI developer and data analyst and has one of the strongest work ethics that I know. Nayan has grown exceptionally at his time at Annalect and has received numerous on the spot and star employee of the quarter awards that clearly demonstrate his passion for success and the guts/wherewithall to do whatever it takes to deliver work.\n\nOne of my favorite aspects of my job in the past year has been to work side by side Nayan and see him continue to grow and prosper. I know that whatever he does, he will be very successful."
     },
     {
       name: "Morrisa Silverman",
       role: "Senior Industry Account Executive, Travel at Microsoft",
-      text: "I had the pleasure of working with Nayan over the course of many months. His reports were instrumental to the day to day success of my paid search campaigns. Nayan was a quick learner..."
+      text: "I had the pleasure of working with Nayan over the course of many months. His reports were instrumental to the day to day success of my paid search campaigns. Nayan was a quick learner and was always able to change a deliverable to meet a new business need when asked. His data was extremely accurate and he proactively communicated with me any issue with obtaining data from third party vendors."
     }
   ]
 };
