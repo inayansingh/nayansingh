@@ -107,7 +107,7 @@ export const userData = {
     },
     {
       role: "Delegate",
-      organization: "FICCI",
+      organization: "Federation of Indian Chambers of Commerce and Industry (FICCI)",
       period: "May 2013",
       domain: "Science and Technology",
       description: "The objective of the conference was to bring awareness about latest Technologies, security challenges, fair use of technology and issues of capacity building for mitigating the risks. It was a good learning experience for the participants to interact with various Scholars, Policymakers, Technology Experts, Venture Capitalists etc."
