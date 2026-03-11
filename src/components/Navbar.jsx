@@ -1,9 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Terminal, Lightbulb, Code2, Briefcase } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
+  
+  if (location.pathname === '/radha-kripa') {
+    return null; // Let the Radha Kripa app own the entire viewport
+  }
+
   return (
     <nav className="navbar glass-panel">
       <div className="navbar-container">

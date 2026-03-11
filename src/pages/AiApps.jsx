@@ -2,7 +2,16 @@ import React from 'react';
 import { Code2, Play, Github, HardDrive } from 'lucide-react';
 import './AiApps.css';
 
-const appsData = [];
+const appsData = [
+  {
+    name: "Radha Kripa",
+    status: "online",
+    description: "A divine astrology companion that interprets your Vedic birth kundali and provides compassionate life guidance using the Gemini AI model.",
+    model: "gemini-2.5-flash",
+    demoLink: "/radha-kripa",
+    repoLink: "#"
+  }
+];
 
 const AiApps = () => {
   return (
@@ -43,7 +52,7 @@ const AiApps = () => {
               </div>
 
               <div className="app-actions flex gap-4 mt-auto">
-                 <a href={app.demoLink} className={`btn ${app.status === 'online' ? 'btn-primary' : 'btn-secondary disabled'}`}>
+                 <a href={app.demoLink} target="_blank" rel="noopener noreferrer" className={`btn ${app.status === 'online' ? 'btn-primary' : 'btn-secondary disabled'}`}>
                     <Play size={16} />
                     <span>Launch App</span>
                  </a>

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Research from './pages/Research';
 import AiApps from './pages/AiApps';
+import RadhaKripaApp from './apps/RadhaKripa/RadhaKripaApp';
 import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<Research />} />
             <Route path="/apps" element={<AiApps />} />
+            <Route path="/radha-kripa" element={<RadhaKripaApp />} />
           </Routes>
         </main>
       </div>

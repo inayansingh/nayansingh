@@ -1,0 +1,435 @@
+/* Radha Kripa Divine Aesthetic */
+:root {
+  --radha-pink: #FF8EB8;
+  --radha-pink-light: #FFE2EB;
+  --radha-pink-dark: #D15A85;
+  
+  --radha-saffron: #FFAE42;
+  --radha-saffron-light: #FFF0D9;
+  
+  --radha-cream: #FFFBF2;
+  --radha-cream-dark: #F7F1E3;
+  
+  --radha-gold: #D4AF37;
+  --radha-gold-light: #F9E596;
+  
+  --radha-blue: #008B99;
+  
+  --radha-text-dark: #3E2723;
+  --radha-text-muted: #6D4C41;
+}
+
+.radha-app-container {
+  min-height: 100vh;
+  background: var(--radha-cream);
+  color: var(--radha-text-dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  background-image: linear-gradient(to bottom, rgba(255, 251, 242, 0.4), rgba(255, 226, 235, 0.4)), url("../../assets/images/divine_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Override global dark theme variables for this app */
+  --bg-primary: var(--radha-cream);
+  --text-primary: var(--radha-text-dark);
+  --text-secondary: var(--radha-text-muted);
+}
+
+.radha-card-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 10;
+}
+
+.radha-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 174, 66, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  height: 85vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.radha-side-panel {
+  flex: 0 0 calc(50vw - 400px);
+  min-width: 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: none; /* Mobile hidden by default */
+}
+
+@media (min-width: 1200px) {
+  .radha-side-panel {
+    display: block;
+  }
+}
+
+.radha-side-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 20px rgba(255,142,184,0.4));
+  animation: floatBreathing 8s ease-in-out infinite alternate;
+}
+
+.radha-side-panel.left .radha-side-image {
+  mask-image: linear-gradient(to left, transparent, black 40%);
+  -webkit-mask-image: linear-gradient(to left, transparent, black 40%);
+  object-position: right center;
+}
+
+.radha-side-panel.right .radha-side-image {
+  mask-image: linear-gradient(to right, transparent, black 40%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 40%);
+  object-position: left center;
+  animation-delay: -4s; /* Offset breathing */
+}
+
+
+/* Onboarding Form */
+.radha-onboarding {
+  padding: 2rem 3rem;
+  overflow-y: hidden;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.radha-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.radha-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--radha-pink-dark), var(--radha-saffron));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.radha-subtitle {
+  color: var(--radha-text-muted);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-family: 'Cinzel', serif;
+}
+
+.radha-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.radha-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.radha-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.radha-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--radha-text-muted);
+}
+
+.radha-input, .radha-select {
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--radha-text-dark);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.radha-input:focus, .radha-select:focus {
+  outline: none;
+  border-color: var(--radha-saffron);
+  box-shadow: 0 0 0 3px var(--radha-saffron-light);
+  background: white;
+}
+
+.radha-btn {
+  background: linear-gradient(135deg, var(--radha-pink), var(--radha-saffron));
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 142, 184, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.radha-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.radha-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(255, 142, 184, 0.4);
+}
+
+
+
+
+/* Chat Interface */
+.radha-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  max-height: 800px;
+}
+
+.radha-chat-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.radha-avatar-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--radha-gold), var(--radha-pink));
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  animation: divineGlow 4s infinite alternate ease-in-out;
+}
+
+.radha-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.radha-header-info h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--radha-text-dark);
+  font-family: 'Cinzel', serif;
+}
+
+.radha-header-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--radha-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-style: italic;
+}
+
+.radha-status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--radha-gold);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.radha-chat-messages {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 251, 242, 0.6));
+}
+
+.radha-message {
+  max-width: 80%;
+  display: flex;
+  gap: 1rem;
+  animation: messageFadeIn 0.3s ease forwards;
+}
+
+.radha-message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.radha-message.ai {
+  align-self: flex-start;
+}
+
+.radha-message-bubble {
+  padding: 1rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.radha-message.user .radha-message-bubble {
+  background: white;
+  color: var(--radha-text-dark);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.radha-message.ai .radha-message-bubble {
+  background: linear-gradient(135deg, var(--radha-pink-light), white);
+  color: var(--radha-text-dark);
+  border: 1px solid rgba(255, 142, 184, 0.2);
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 15px rgba(255, 142, 184, 0.1);
+}
+
+.radha-ai-avatar-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.radha-chat-input-area {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.radha-chat-input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: var(--radha-cream-dark);
+  color: var(--radha-text-dark);
+  font-size: 1rem;
+  resize: none;
+  min-height: 24px;
+  max-height: 120px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.radha-chat-input:focus {
+  outline: none;
+  border-color: var(--radha-saffron);
+  background: white;
+  box-shadow: 0 0 0 3px var(--radha-saffron-light);
+}
+
+.radha-send-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--radha-pink), var(--radha-saffron));
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(255, 142, 184, 0.3);
+}
+
+.radha-send-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 142, 184, 0.4);
+}
+
+.radha-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--radha-pink-dark);
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes divineGlow {
+  0% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 10px rgba(255, 142, 184, 0.4); }
+}
+
+@keyframes messageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+@keyframes floatBreathing {
+  0% { transform: translateY(0) scale(1.0); }
+  100% { transform: translateY(-15px) scale(1.02); }
+}
+
+@media (max-width: 768px) {
+  .radha-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
