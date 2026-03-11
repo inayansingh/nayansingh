@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Onboarding from './Onboarding';
 import ChatInterface from './ChatInterface';
 import './RadhaKripa.css';
@@ -8,6 +8,18 @@ import sideRightImg from '../../assets/images/radha_krishna_right.png';
 const RadhaKripaApp = () => {
   const [step, setStep] = useState('onboarding');
   const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    if (step === 'onboarding') {
+      document.title = 'Radha Kripa';
+    } else if (step === 'chat' && userData?.fullName) {
+      document.title = userData.fullName;
+    }
+
+    return () => {
+      document.title = 'Nayan Singh | Portfolio';
+    };
+  }, [step, userData]);
 
   const handleOnboardingComplete = (data) => {
     setUserData(data);
