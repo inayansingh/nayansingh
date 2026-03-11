@@ -129,9 +129,10 @@
 
 .radha-subtitle {
   color: var(--radha-text-muted);
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-style: italic;
-  font-family: 'Cinzel', serif;
+  font-family: 'Great Vibes', cursive;
+  margin-top: -10px;
 }
 
 .radha-form-grid {
