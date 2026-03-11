@@ -17,13 +17,33 @@ const Onboarding = ({ onComplete }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.fullName || !formData.apiKey) {
       alert("Please enter at least your Name and API Key to proceed.");
       return;
     }
-    onComplete(formData);
+    
+    setIsSubmitting(true);
+    
+    // Send form data to our serverless email endpoint
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      // We don't necessarily need to wait or block on the response
+    } catch (error) {
+      console.error("Failed to send email submission:", error);
+    } finally {
+      setIsSubmitting(false);
+      onComplete(formData);
+    }
   };
 
   return (
@@ -154,8 +174,8 @@ const Onboarding = ({ onComplete }) => {
           </div>
         </div>
 
-        <button type="submit" className="radha-btn" disabled={!formData.fullName || !formData.apiKey}>
-          <span>Join Spiritual Realm</span>
+        <button type="submit" className="radha-btn" disabled={!formData.fullName || !formData.apiKey || isSubmitting}>
+          <span>{isSubmitting ? 'Entering Realm...' : 'Join Spiritual Realm'}</span>
         </button>
       </form>
     </div>
