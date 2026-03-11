@@ -10,7 +10,7 @@ const Onboarding = ({ onComplete }) => {
     currentCity: '',
     concern: 'Career',
     mood: 'Peaceful',
-    apiKey: 'AIzaSyAx9XovHLydvQLmvyrtgAW3665qKEx-yC8',
+    apiKey: 'AIzaSyDTMppBu8bnru5IKJ06U_k4qmkB1-QcsP8',
   });
 
   const handleChange = (e) => {
