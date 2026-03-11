@@ -49,8 +49,8 @@ const Onboarding = ({ onComplete }) => {
   return (
     <div className="radha-onboarding">
       <div className="radha-header">
-        <h1 className="radha-title">Radha Kripa</h1>
-        <p className="radha-subtitle">Spiritual Companion</p>
+        <h1 className="radha-title">Preksha</h1>
+        <p className="radha-subtitle">Your Spiritual Companion</p>
       </div>
 
       <form onSubmit={handleSubmit} className="radha-form">

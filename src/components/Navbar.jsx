@@ -6,8 +6,9 @@ import './Navbar.css';
 const Navbar = () => {
   const location = useLocation();
   
-  if (location.pathname === '/radha-kripa') {
-    return null; // Let the Radha Kripa app own the entire viewport
+  // Render nothing if we are on the Preksha app route
+  if (location.pathname === '/preksha') {
+    return null; // Let the Preksha app own the entire viewport
   }
 
   return (

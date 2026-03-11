@@ -4,11 +4,11 @@ import './AiApps.css';
 
 const appsData = [
   {
-    name: "Radha Kripa",
+    name: "Preksha",
     status: "online",
     description: "A divine astrology companion that interprets your Vedic birth kundali and provides compassionate life guidance using the Gemini AI model.",
     model: "gemini-2.5-flash",
-    demoLink: "/radha-kripa",
+    demoLink: "/preksha",
     repoLink: "#"
   }
 ];

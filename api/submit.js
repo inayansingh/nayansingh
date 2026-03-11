@@ -37,9 +37,9 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: 'inayansingh@gmail.com', // The destination email address requested
-      subject: `New Radha Kripa Submission: ${fullName}`,
+      subject: `New Preksha Submission: ${fullName}`,
       html: `
-        <h2>New Seeker Submission - Radha Kripa</h2>
+        <h2>New Seeker Submission - Preksha</h2>
         <p>A new user has submitted their details for a spiritual reading.</p>
         <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
           <tr>
@@ -75,7 +75,7 @@ export default async function handler(req, res) {
             <td>${mood || 'N/A'}</td>
           </tr>
         </table>
-        <p style="color: #666; font-size: 12px; margin-top: 20px;">This automated email was sent from the Radha Kripa application.</p>
+        <p style="color: #666; font-size: 12px; margin-top: 20px;">This automated email was sent from the Preksha application.</p>
       `,
     };
 

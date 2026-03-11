@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Onboarding from './Onboarding';
 import ChatInterface from './ChatInterface';
-import './RadhaKripa.css';
+import './Preksha.css';
 import sideLeftImg from '../../assets/images/radha_krishna_left.png';
 import sideRightImg from '../../assets/images/radha_krishna_right.png';
 
-const RadhaKripaApp = () => {
+const PrekshaApp = () => {
   const [step, setStep] = useState('onboarding');
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     if (step === 'onboarding') {
-      document.title = 'Radha Kripa';
+      document.title = 'Preksha - Your Spiritual Companion';
     } else if (step === 'chat' && userData?.fullName) {
       document.title = userData.fullName;
     }
@@ -51,4 +51,4 @@ const RadhaKripaApp = () => {
   );
 };
 
-export default RadhaKripaApp;
+export default PrekshaApp;
