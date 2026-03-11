@@ -110,7 +110,7 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
           <img src={radhaAvatar} alt="Radha Divine" className="radha-avatar" />
         </div>
         <div className="radha-header-info">
-          <h2>Radha Kripa</h2>
+          <h2>{userData.fullName}</h2>
           <p><span className="radha-status-dot"></span> Divine presence is listening...</p>
         </div>
       </div>
