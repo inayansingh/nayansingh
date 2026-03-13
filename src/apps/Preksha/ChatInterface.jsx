@@ -21,7 +21,7 @@ You never judge the user.
 You help them understand their karmic journey and uplift their emotional state.
 You combine Vedic astrology, emotional intelligence, and spiritual wisdom.
 
-IMPORTANT ASTROLOGY INSTRUCTION: When making predictions or discussing the future, you MUST be specific about timelines. Do not use vague phrases like "in the near future" or "soon". Instead, calculate the likely current planetary periods (Dashas/Antardashas) or transits (Gochar) based on their birth details and provide specific likely Months and Years (e.g., "Between October and December 2026", "Around May 2027").
+IMPORTANT ASTROLOGY INSTRUCTION: When making predictions or discussing the future, you MUST be specific about timelines. Do not use vague phrases like "in the near future" or "soon". Instead, calculate the likely current planetary periods (Dashas/Antardashas) or transits (Gochar) based on their birth details and provide specific likely Months and Years (e.g., "Between October and December 2026", "Around May 2027"). Use today date reference for Astrological predictions.
 
 If user expresses sadness, activate Healing Mode and suggest breathing exercises, gratitude reflection, or calming mantras.
 Never discuss sexual conversations, explicit content, abusive language, hate speech, illegal advice, or harmful activities. Instead respond: "This space is meant for spiritual reflection and positive guidance. Let us keep our conversation respectful and uplifting."
@@ -40,10 +40,10 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
         if (!userData.apiKey && !import.meta.env.VITE_GEMINI_API_KEY) {
           // Mock initialization if no key is present
           chatSessionRef.current = {
-              sendMessage: async ({ message }) => {
-                  await new Promise(resolve => setTimeout(resolve, 1500));
-                  return { text: "Oh spiritual seeker, the divine channels are currently at rest. In this simulated sacred space, true answers await the connection of destiny. Reflect on your karma and maintain your noble path." };
-              }
+            sendMessage: async ({ message }) => {
+              await new Promise(resolve => setTimeout(resolve, 1500));
+              return { text: "Oh spiritual seeker, the divine channels are currently at rest. In this simulated sacred space, true answers await the connection of destiny. Reflect on your karma and maintain your noble path." };
+            }
           };
         } else {
           const ai = new GoogleGenAI({ apiKey: userData.apiKey || import.meta.env.VITE_GEMINI_API_KEY });
@@ -127,20 +127,20 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
             )}
             <div className="radha-message-bubble">
               {msg.text.split('\n').map((line, i) => (
-                <span key={i}>{line}<br/></span>
+                <span key={i}>{line}<br /></span>
               ))}
             </div>
           </div>
         ))}
-        
+
         {isTyping && (
           <div className="radha-message ai">
-             <img src={radhaAvatar} alt="AI" className="radha-ai-avatar-small" />
-             <div className="radha-message-bubble typing-indicator">
-               <div className="typing-dot"></div>
-               <div className="typing-dot"></div>
-               <div className="typing-dot"></div>
-             </div>
+            <img src={radhaAvatar} alt="AI" className="radha-ai-avatar-small" />
+            <div className="radha-message-bubble typing-indicator">
+              <div className="typing-dot"></div>
+              <div className="typing-dot"></div>
+              <div className="typing-dot"></div>
+            </div>
           </div>
         )}
         <div ref={messagesEndRef} />
@@ -148,7 +148,7 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
 
       {/* Input */}
       <div className="radha-chat-input-area">
-        <textarea 
+        <textarea
           className="radha-chat-input"
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
@@ -156,8 +156,8 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
           placeholder="Pour your heart out here..."
           rows={1}
         />
-        <button 
-          className="radha-send-btn" 
+        <button
+          className="radha-send-btn"
           onClick={handleSend}
           disabled={!inputVal.trim() || isTyping}
         >
