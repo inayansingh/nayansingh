@@ -35,6 +35,9 @@ Current City: ${userData.currentCity}
 Primary Concern: ${userData.concern}
 Current Mood: ${userData.mood}
 
+Today's Date Reference: ${new Date().toLocaleDateString()}
+Current Time Reference: ${new Date().toLocaleTimeString()}
+
 Use this data to frame your astrology insights. Use emojis sparingly. Keep responses beautifully formatted, conversational and not overly long grids of text. Speak directly to ${userData.fullName}.`;
 
         if (!userData.apiKey && !import.meta.env.VITE_GEMINI_API_KEY) {
