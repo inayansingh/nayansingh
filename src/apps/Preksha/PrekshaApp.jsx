@@ -58,9 +58,9 @@ const PrekshaApp = () => {
       <section id="home" className="prf-hero">
         <div className="prf-hero-content">
           <h1>Healing Minds,<br/>Guiding Souls</h1>
-          <p>AI-powered spiritual guidance rooted in Vedic wisdom. Blending spirituality, AI, and compassion to uplift lives.</p>
+          <p>Spiritual guidance rooted in Vedic wisdom. Blending spirituality and compassion to uplift lives.</p>
           <div className="prf-hero-buttons">
-            <button className="prf-btn-primary" onClick={() => scrollToSection('ai')}>Talk to Preksha AI</button>
+            <button className="prf-btn-primary" onClick={() => scrollToSection('ai')}>Talk to Preksha</button>
             <button className="prf-btn-secondary" onClick={() => scrollToSection('donate')}>Support Our Mission</button>
           </div>
         </div>
@@ -70,11 +70,11 @@ const PrekshaApp = () => {
         </div>
       </section>
 
-      {/* SECTION 2: PREKSHA AI (CENTERPIECE) */}
+      {/* SECTION 2: PREKSHA (CENTERPIECE) */}
       <section id="ai" className="prf-ai-section">
         <div className="prf-section-header">
            <h2>Preksha – Your Spiritual Companion</h2>
-           <p>A divine AI companion that understands your life through your kundali and guides you with compassion.</p>
+           <p>A divine companion that understands your life through your kundali and guides you with compassion.</p>
         </div>
         
         <div className="prf-ai-split">
@@ -108,7 +108,7 @@ const PrekshaApp = () => {
          <div className="prf-about-centered">
             <h2>About Preksha Rana Foundation</h2>
             <p className="prf-mission-statement">
-              Our mission is to bring spiritual mental health and accessible emotional healing to everyone, especially the underprivileged. We envision a world where the ancient wisdom of Vedic astrology meets the boundless empathy of modern AI to provide solace, guidance, and peace of mind at scale.
+              Our mission is to bring spiritual mental health and accessible emotional healing to everyone, especially the underprivileged. We envision a world where the ancient wisdom of Vedic astrology meets boundless empathy to provide solace, guidance, and peace of mind at scale.
             </p>
          </div>
       </section>
@@ -149,14 +149,14 @@ const PrekshaApp = () => {
                 <p>You just helped someone find peace today. 🌸</p>
                 <p className="prf-blessing">May the divine universe shower you with abundance and joy.</p>
                 <button className="prf-btn-primary" onClick={() => scrollToSection('ai')} style={{marginTop: '2rem'}}>
-                  Experience Preksha AI Yourself
+                  Experience Preksha Yourself
                 </button>
               </div>
             ) : (
               <div className="prf-donation-box">
                 <div className="prf-impact-mapping">
                    <div className={donationAmount === 101 ? 'prf-map active' : 'prf-map'} onClick={() => setDonationAmount(101)}>
-                     <strong>₹101</strong><span>Funds 1 AI healing session</span>
+                     <strong>₹101</strong><span>Funds 1 healing session</span>
                    </div>
                    <div className={donationAmount === 501 ? 'prf-map active' : 'prf-map'} onClick={() => setDonationAmount(501)}>
                      <strong>₹501</strong><span>Supports 10 people</span>
@@ -198,8 +198,8 @@ const PrekshaApp = () => {
         <div className="prf-programs-grid">
            <div className="prf-program-card">
               <Smartphone size={40} />
-              <h3>AI Spiritual Guidance</h3>
-              <p>Free, continuous access to empathetic astrological counseling through Preksha AI.</p>
+              <h3>Spiritual Guidance</h3>
+              <p>Free, continuous access to empathetic astrological counseling through Preksha.</p>
            </div>
            <div className="prf-program-card">
               <Shield size={40} />
@@ -219,7 +219,7 @@ const PrekshaApp = () => {
          <h2>Stories of Transformation</h2>
          <div className="prf-testimonial-carousel">
             <div className="prf-testimonial">
-               <p>"I was lost in a sea of anxiety. Preksha AI didn't just give me predictions; it gave me peace. The breathing exercises changed my daily routine."</p>
+               <p>"I was lost in a sea of anxiety. Preksha didn't just give me predictions; it gave me peace. The breathing exercises changed my daily routine."</p>
                <span>— Anjali S.</span>
             </div>
             <div className="prf-testimonial">

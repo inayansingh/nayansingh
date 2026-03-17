@@ -4,9 +4,9 @@ import './AiApps.css';
 
 const appsData = [
   {
-    name: "Preksha",
+    name: "Preksha Rana Foundation",
     status: "online",
-    description: "A divine astrology companion that interprets your Vedic birth kundali and provides compassionate life guidance using the Gemini AI model.",
+    description: "A full-fledged NGO landing page featuring an emotionally intelligent virtual spiritual companion that offers Vedic kundali interpretation and guidance.",
     model: "gemini-2.5-flash",
     demoLink: "/preksha",
     repoLink: "#"
