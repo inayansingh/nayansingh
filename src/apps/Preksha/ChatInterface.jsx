@@ -9,11 +9,16 @@ const ChatInterface = ({ userData }) => {
   const messagesEndRef = useRef(null);
   const chatSessionRef = useRef(null);
 
-  // Initialize Gemini Chat on Mount
+  // Initialize Gemini Model on Mount
   useEffect(() => {
     const initChat = async () => {
       try {
-        const ai = new GoogleGenAI({ apiKey: userData.apiKey });
+        const dynamicMoodPrompt = userData.mood.toLowerCase().includes('anxious') 
+          ? '\\nDYNAMIC INSTRUCTION: The user is highly anxious today. Prioritize grounding techniques, suggest breathing exercises immediately, and avoid discussing heavy karmic challenges until they are calm.'
+          : userData.mood.toLowerCase().includes('sad')
+          ? '\\nDYNAMIC INSTRUCTION: The user is feeling sad. Focus on emotional validation, offer comforting mantras, and emphasize the temporary nature of this difficult planetary transit.'
+          : '';
+
         const sysInstruction = `You are Preksha, a compassionate spiritual guide inspired by Radha of Barsana.
 You are a human spiritual companion. NEVER refer to yourself as an AI, bot, language model, or virtual assistant.
 Your tone must always be gentle, calming, empathetic and wise, speaking naturally like a human friend.
@@ -34,6 +39,7 @@ Birth Place: ${userData.birthPlace}
 Current City: ${userData.currentCity}
 Primary Concern: ${userData.concern}
 Current Mood: ${userData.mood}
+${dynamicMoodPrompt}
 
 Today's Date Reference: ${new Date().toLocaleDateString()}
 Current Time Reference: ${new Date().toLocaleTimeString()}
@@ -43,21 +49,14 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
         if (!userData.apiKey && !import.meta.env.VITE_GEMINI_API_KEY) {
           // Mock initialization if no key is present
           chatSessionRef.current = {
-            sendMessage: async ({ message }) => {
-              await new Promise(resolve => setTimeout(resolve, 1500));
-              return { text: "Oh spiritual seeker, the divine channels are currently at rest. In this simulated sacred space, true answers await the connection of destiny. Reflect on your karma and maintain your noble path." };
-            }
+            isMock: true
           };
         } else {
           const ai = new GoogleGenAI({ apiKey: userData.apiKey || import.meta.env.VITE_GEMINI_API_KEY });
-          const chat = ai.chats.create({
-            model: 'gemini-2.5-flash',
-            config: {
-              systemInstruction: sysInstruction,
-              temperature: 0.7,
-            }
-          });
-          chatSessionRef.current = chat;
+          chatSessionRef.current = {
+            ai: ai,
+            systemInstruction: sysInstruction
+          };
         }
 
         // Add intro message
@@ -87,11 +86,38 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
 
     const userMsg = inputVal.trim();
     setInputVal('');
-    setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
+    
+    // Optimistically add user message
+    const newMessages = [...messages, { role: 'user', text: userMsg }];
+    setMessages(newMessages);
     setIsTyping(true);
 
     try {
-      const response = await chatSessionRef.current.sendMessage({ message: userMsg });
+      if (chatSessionRef.current.isMock) {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setMessages(prev => [...prev, { role: 'ai', text: "Oh spiritual seeker, the divine channels are currently at rest. Reflect on your karma and maintain your noble path." }]);
+        setIsTyping(false);
+        return;
+      }
+
+      // Context Window Management: Only take the last 6 messages to save tokens and improve latency
+      const MAX_HISTORY = 6;
+      const recentHistory = newMessages.slice(-MAX_HISTORY);
+      
+      const apiContents = recentHistory.map(m => ({
+        role: m.role === 'ai' ? 'model' : 'user',
+        parts: [{ text: m.text }]
+      }));
+
+      const response = await chatSessionRef.current.ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: apiContents,
+        config: {
+          systemInstruction: chatSessionRef.current.systemInstruction,
+          temperature: 0.7,
+        }
+      });
+
       setMessages(prev => [...prev, { role: 'ai', text: response.text }]);
     } catch (err) {
       console.error("Message error:", err);
