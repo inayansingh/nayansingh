@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GoogleGenAI } from '@google/genai';
-import radhaAvatar from '../../assets/images/custom_radha.png';
+import radhaAvatar from '../../assets/images/preksha_rana_avatar.png';
 
 const ChatInterface = ({ userData }) => {
   const [messages, setMessages] = useState([]);

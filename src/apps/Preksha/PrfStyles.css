@@ -167,15 +167,34 @@
   animation: etherealFadeIn 1.5s ease-out forwards;
 }
 
+.prf-hero-avatar-wrapper {
+  margin: 0 auto 2rem auto;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 4px; /* Space for the glowing border */
+  background: linear-gradient(135deg, var(--prf-saffron), var(--prf-gold));
+  box-shadow: 0 10px 30px rgba(211, 116, 53, 0.4), 0 0 40px rgba(255, 255, 255, 0.8);
+  animation: floatBreathing 6s ease-in-out infinite alternate;
+}
+
+.prf-hero-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+@keyframes floatBreathing {
+  0% { transform: translateY(0) scale(1.0); box-shadow: 0 10px 30px rgba(211, 116, 53, 0.3), 0 0 20px rgba(255, 255, 255, 0.5); }
+  100% { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 40px rgba(211, 116, 53, 0.5), 0 0 50px rgba(255, 255, 255, 0.9); }
+}
+
 @keyframes etherealFadeIn {
   from { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(10px); }
   to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
-
-.prf-sacred-icon {
-  margin: 0 auto 1.5rem;
-  color: var(--prf-gold);
-  opacity: 0.9;
 }
 
 .prf-hero-content h1 {

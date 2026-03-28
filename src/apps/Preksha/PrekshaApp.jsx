@@ -5,6 +5,8 @@ import ChatInterface from './ChatInterface';
 import './Preksha.css';
 import './PrfStyles.css';
 
+import prekshaAvatar from '../../assets/images/preksha_rana_avatar.png';
+
 const PrekshaApp = () => {
   const [step, setStep] = useState('onboarding');
   const [userData, setUserData] = useState(null);
@@ -57,7 +59,9 @@ const PrekshaApp = () => {
       {/* SECTION 1: HERO PORTAL */}
       <section id="home" className="prf-hero">
         <div className="prf-glass-panel prf-hero-card">
-          <Hexagon className="prf-sacred-icon" size={48} strokeWidth={1} />
+          <div className="prf-hero-avatar-wrapper">
+            <img src={prekshaAvatar} alt="Preksha Rana - Digital Sanctuary" className="prf-hero-avatar" />
+          </div>
           <div className="prf-hero-content">
             <h1>Awaken Your Cosmic Blueprint</h1>
             <p>Embrace the journey. Align with your truest self. Find balance & harmony in the universe through profoundly empathetic, mathematically precise Vedic guidance.</p>
