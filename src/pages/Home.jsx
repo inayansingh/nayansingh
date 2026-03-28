@@ -93,7 +93,7 @@ const Home = () => {
                 </h4>
                 
                 <div className="academic-desc-container my-4">
-                  <p className="academic-text text-secondary leading-relaxed whitespace-pre-line">
+                  <p className="academic-text text-secondary text-justify leading-relaxed whitespace-pre-line">
                     {pub.description}
                   </p>
                 </div>
