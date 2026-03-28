@@ -92,14 +92,14 @@ const Home = () => {
                   {pub.title}
                 </h4>
                 
-                <div className="academic-desc-container mt-2 mb-3">
+                <div className="academic-desc-container mt-2 mb-0">
                   <p className="academic-text text-secondary text-justify leading-relaxed whitespace-pre-line">
                     {pub.description}
                   </p>
                 </div>
                 
-                <div className="pt-3 border-t border-glass-border overflow-hidden">
-                  <a href={pub.link} target="_blank" rel="noopener noreferrer" className="academic-btn btn btn-primary w-full justify-center mt-2 group-hover:shadow-[0_0_15px_rgba(189,0,255,0.4)] transition-all">
+                <div className="border-t border-glass-border overflow-hidden pt-0 mt-3">
+                  <a href={pub.link} target="_blank" rel="noopener noreferrer" className="academic-btn btn btn-primary w-full justify-center group-hover:shadow-[0_0_15px_rgba(189,0,255,0.4)] transition-all">
                     <BookOpen size={14} />
                     <span>Acquire Publication</span>
                     <ExternalLink size={12} className="ml-2 opacity-70" />
