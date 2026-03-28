@@ -10,41 +10,40 @@ const PaperSpiritualAI = () => {
 
   return (
     <div className="paper-page-wrapper">
-      <div className="container max-w-4xl mx-auto px-4 py-12">
-        <Link to="/research" className="inline-flex items-center text-accent-cyan hover:text-white transition-colors mb-12">
-          <ArrowLeft size={20} className="mr-2" />
+      <div className="paper-container">
+        
+        <Link to="/research" className="paper-back-link">
+          <ArrowLeft size={20} className="icon-mr" />
           Back to Research
         </Link>
         
-        <article className="glass-panel p-8 md:p-14 research-article">
-          <header className="article-header border-b border-glass-border pb-8 mb-10">
-            <div className="flex flex-wrap gap-2 mb-6">
-              <span className="pill text-xs px-3 py-1 bg-accent-cyan/10 text-accent-cyan rounded-full border border-accent-cyan/20">Artificial Intelligence</span>
-              <span className="pill text-xs px-3 py-1 bg-accent-blue/10 text-accent-blue rounded-full border border-accent-blue/20">System Architecture</span>
-              <span className="pill text-xs px-3 py-1 bg-accent-purple/10 text-accent-purple rounded-full border border-accent-purple/20">Digital Mental Health</span>
+        <article className="glass-panel paper-article">
+          <header className="paper-header">
+            <div className="paper-tags">
+              <span className="pill api-pill">Artificial Intelligence</span>
+              <span className="pill arch-pill">System Architecture</span>
+              <span className="pill health-pill">Digital Mental Health</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="paper-title">
               The Architecture of Empathy: <br/>
-              <span className="gradient-text text-3xl md:text-4xl block mt-2">Synthesizing Deterministic Ephemeris with Large Language Models</span>
+              <span className="gradient-text paper-subtitle">Synthesizing Deterministic Ephemeris with Large Language Models</span>
             </h1>
             
-            <div className="flex items-center gap-4 text-secondary font-mono">
-              <div className="author-badge w-10 h-10 rounded-full bg-gradient-to-br from-accent-cyan to-accent-blue flex items-center justify-center text-white font-bold">
-                NS
-              </div>
-              <div>
-                <p className="font-bold text-primary">Nayan Kumar Singh</p>
-                <p className="text-sm">Published March 2026</p>
+            <div className="paper-author-box">
+              <div className="author-badge">NS</div>
+              <div className="author-details">
+                <p className="author-name">Nayan Kumar Singh</p>
+                <p className="author-date">Published March 2026</p>
               </div>
             </div>
           </header>
 
-          <div className="article-content space-y-8 text-secondary leading-relaxed">
+          <div className="paper-content">
             
-            <section className="abstract bg-glass-bg p-6 rounded-xl border border-glass-border border-l-4 border-l-accent-cyan">
-              <h3 className="text-xl font-bold text-primary mb-3 flex items-center gap-2">
-                 <AlignLeft size={20} className="text-accent-cyan" /> Abstract
+            <section className="abstract bg-glass-bg">
+              <h3 className="abstract-title">
+                 <AlignLeft size={20} style={{color: 'var(--accent-cyan)'}} /> Abstract
               </h3>
               <p>
                 The intersection of ancient spiritual predictive systems and modern Generative AI presents a unique architectural challenge: How do we impart emotionally consistent "wisdom" into a probabilistic language model while eliminating hallucinations regarding real-world timelines? This paper explores the framework of a highly responsive, serverless application serving as an emotionally intelligent virtual companion.
@@ -52,8 +51,8 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">1. The Vedic Precedent for Digital Mental Health</h2>
-              <p className="mb-4">
+              <h2>1. The Vedic Precedent for Digital Mental Health</h2>
+              <p>
                 The necessity of cultivating mental well-being is not a modern innovation, but rather a foundational pillar of Vedic sciences. The <em>Yajur Veda</em> explicitly focuses on the cultivation of an auspicious mind in the renowned <strong>Shiva Sankalpa Suktam</strong> (Chapter 34, Verses 1-6), repeatedly ending with the profound mandate: <em>"Tanme manah shiva sankalpam astu"</em> (May my mind be filled with auspicious and peaceful resolves).
               </p>
               <p>
@@ -62,59 +61,59 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-primary mb-6 mt-12 border-b border-glass-border pb-2">2. System Architecture</h2>
-              <p className="mb-6">To achieve this synthesis between ancient logic and generative capacity, a strict multi-layered serverless pipeline was engineered.</p>
+              <h2>2. System Architecture</h2>
+              <p>To achieve this synthesis between ancient logic and generative capacity, a strict multi-layered serverless pipeline was engineered.</p>
               
               {/* Custom CSS Diagram */}
-              <div className="bg-glass-bg border border-glass-border p-8 rounded-2xl overflow-x-auto custom-diagram my-8">
-                <div className="diagram-grid min-w-[600px]">
+              <div className="bg-glass-bg custom-diagram overflow-x-auto">
+                <div className="diagram-grid">
                    {/* Row 1 */}
-                   <div className="flex justify-center mb-6">
-                      <div className="node user-node text-center">User Distress Query</div>
+                   <div className="diagram-row">
+                      <div className="node user-node">User Distress Query</div>
                    </div>
                    <div className="line-down"></div>
                    
                    {/* Row 2 */}
-                   <div className="flex justify-center mb-6 relative">
+                   <div className="diagram-row">
                       <div className="node react-node">Strict React Client & Onboarding Layer</div>
                    </div>
                    
-                   <div className="flex justify-between max-w-lg mx-auto mb-6 relative px-4">
+                   <div className="diagram-branch-row">
                       <div className="line-branch-left"></div>
                       <div className="line-branch-right"></div>
-                      <div className="node data-node w-5/12 text-center text-sm">Location / Time Geocoding</div>
-                      <div className="node data-node w-5/12 text-center text-sm">Emotional State Capture</div>
+                      <div className="node data-node w-half">Location / Time Geocoding</div>
+                      <div className="node data-node w-half">Emotional State Capture</div>
                    </div>
                    
                    {/* Row 4 */}
-                   <div className="flex justify-between max-w-lg mx-auto mb-6 relative px-4">
-                      <div className="line-down absolute left-[20%] -top-6 h-6"></div>
-                      <div className="line-down absolute right-[20%] -top-6 h-6 border-l-dashed"></div>
+                   <div className="diagram-branch-row">
+                      <div className="line-down absolute-left-20"></div>
+                      <div className="line-down absolute-right-20 dashed"></div>
                       
-                      <div className="node api-node w-5/12 text-center text-sm border-accent-cyan">Prokerala Vedic API (Serverless Backend)</div>
-                      <div className="node empty-node w-5/12 text-center text-sm opacity-0 hidden"></div>
+                      <div className="node api-node w-half">Prokerala Vedic API (Serverless Backend)</div>
+                      <div className="node empty-node w-half"></div>
                    </div>
 
                    {/* Row 5 */}
-                   <div className="flex justify-center mb-8 relative">
+                   <div className="diagram-row relative">
                       <div className="line-converge"></div>
-                      <div className="node injection-node w-full max-w-md text-center bg-accent-purple/10 border-accent-purple text-accent-purple font-mono text-sm py-4">
+                      <div className="node injection-node">
                          SYSTEM INJECTION: [Deterministic Planets] + [User Persona]
                       </div>
                    </div>
-                   <div className="line-down relative -top-8 z-0"></div>
+                   <div className="line-down pull-up"></div>
 
                    {/* Row 6 */}
-                   <div className="flex justify-center mb-6 relative z-10">
-                      <div className="node gemini-node w-64 text-center font-bold text-lg bg-gradient-to-r from-accent-cyan/20 to-accent-blue/20 border-accent-cyan shadow-[0_0_20px_rgba(0,195,255,0.2)]">
+                   <div className="diagram-row z-10">
+                      <div className="node gemini-node">
                          Gemini 2.5 Flash LLM
                       </div>
                    </div>
                    <div className="line-down"></div>
 
                    {/* Row 7 */}
-                   <div className="flex justify-center">
-                      <div className="node ui-node w-64 text-center border-accent-green text-accent-green bg-accent-green/10">
+                   <div className="diagram-row">
+                      <div className="node ui-node">
                          Glassmorphism UI Stream
                       </div>
                    </div>
@@ -124,15 +123,15 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">3. Dynamic Empathy Architecting (The Generative Layer)</h2>
+              <h2>3. Dynamic Empathy Architecting (The Generative Layer)</h2>
               <p>
                 Unlike clinical task-oriented conversational agents, a digital spiritual companion must exhibit cognitive empathy that respects the user's <em>Samskaras</em> (deep-rooted mental patterns). We utilized Google’s Gemini 2.5 Flash model as the core reasoning engine. However, to guarantee an empathetic baseline, the system relies on <strong>Dynamic Persona Injection</strong>. The application proactively captures the user's psychological state via an initial React onboarding layer. This metadata is parsed to dynamically alter the system instructions. An "anxiety" input, for example, forcibly overrides the LLM's standard response tree, instructing the neural network to prioritize grounding algorithms (e.g., breathwork exercises) before delivering predictive advice.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">4. Algorithmic Tethering via REST APIs (The Deterministic Layer)</h2>
-              <p className="mb-4">
+              <h2>4. Algorithmic Tethering via REST APIs (The Deterministic Layer)</h2>
+              <p>
                 Large Language Models inherently struggle with mathematical certainty, often hallucinating timelines or arbitrary dates when asked for temporal predictions. To solve this, the generative brain is tethered to a strict deterministic mathematical engine.
               </p>
               <p>
@@ -141,8 +140,8 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">5. Psychosocial Monetization (The 'Karmic Token' Economy)</h2>
-              <p className="mb-4">
+              <h2>5. Psychosocial Monetization (The 'Karmic Token' Economy)</h2>
+              <p>
                 Mindful engagement is crucial in spiritual counseling. To prevent mindless spamming and enforce a conscious value exchange (<em>Dakshina</em>), the system deploys a stateful "Karmic Economy." The React frontend utilizes browser <code>localStorage</code> variables to track conversation depth. Upon token depletion, the chat loop locks via conditional rendering.
               </p>
               <p>
@@ -151,16 +150,23 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">6. Aesthetic Sensorial Integration (UI/UX)</h2>
+              <h2>6. Aesthetic Sensorial Integration (UI/UX)</h2>
               <p>
                 Technical brilliance must be matched by psychological color theory. The application avoids modern software aesthetics (whites, harsh grays, clinical borders). Instead, it implements a meticulously calculated "Divine Aesthetic"—utilizing dark dimensional purples, saffron gradients, and sophisticated frosted glass components (<code>backdrop-filter: blur(8px)</code>). Intelligent DOM referencing ensures the viewport wrapper remains perfectly static, bounded strictly to incoming messages, preventing jarring layout shifts during deep meditative focus.
               </p>
             </section>
+            
+            <section>
+              <h2>7. Conclusion</h2>
+              <p>
+                By synthesizing rigorous offline mathematical pipelines with emotionally-weighted prompt engineering and culturally-resonant Vedic frameworks, we achieve a highly scalable, serverless digital companion capable of genuine spiritual validation and structurally sound predictive guidance.
+              </p>
+            </section>
 
-            <footer className="mt-16 pt-8 border-t border-glass-border/40 text-sm text-center text-muted flex flex-col items-center">
-               <Edit3 className="mb-4 opacity-50" size={24}/>
+            <footer className="paper-footer">
+               <Edit3 className="footer-icon" size={24}/>
                <p>Published in sys.research_logs | Nayan Kumar Singh Portfolio</p>
-               <p className="mt-2">© 2026 Architectural Syntheses.</p>
+               <p className="copyright-text">© 2026 Architectural Syntheses.</p>
             </footer>
 
           </div>

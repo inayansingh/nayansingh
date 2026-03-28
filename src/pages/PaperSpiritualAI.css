@@ -1,18 +1,124 @@
 .paper-page-wrapper {
   min-height: 100vh;
-  padding-top: 80px;
   background-color: var(--bg-color);
 }
 
-.research-article h2 {
+.paper-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px 60px 20px;
+}
+
+.paper-back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: opacity 0.2s;
+}
+
+.paper-back-link:hover {
+  opacity: 0.8;
+}
+
+.icon-mr {
+  margin-right: 8px;
+}
+
+.paper-article {
+  padding: 60px 80px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+/* Header & Tags */
+.paper-header {
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.pill {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.api-pill { background: rgba(0, 136, 170, 0.1); color: var(--accent-cyan); border: 1px solid rgba(0, 136, 170, 0.2); }
+.arch-pill { background: rgba(0, 153, 68, 0.1); color: var(--accent-green); border: 1px solid rgba(0, 153, 68, 0.2); }
+.health-pill { background: rgba(136, 0, 204, 0.1); color: var(--accent-purple); border: 1px solid rgba(136, 0, 204, 0.2); }
+
+.paper-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.paper-subtitle {
+  display: block;
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.paper-author-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Fira Code', monospace;
+}
+
+.author-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.author-name {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.author-date {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Typography Constraints */
+.paper-content h2 {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-top: 3.5rem;
   margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 8px;
 }
 
-.research-article p {
+.paper-content p {
   line-height: 2.1;
   font-size: 1.1rem;
   color: var(--text-secondary);
@@ -20,68 +126,213 @@
   margin-bottom: 1.75rem;
 }
 
-.research-article strong {
+.paper-content strong {
   color: var(--text-primary);
   font-weight: 700;
 }
 
-.research-article em {
+.paper-content em {
   color: var(--text-muted);
   font-style: italic;
 }
 
-.research-article code {
-  background: rgba(0, 195, 255, 0.1);
+.paper-content code {
+  background: rgba(0, 136, 170, 0.08);
   color: var(--accent-cyan);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: 'Fira Code', monospace;
   font-size: 0.9em;
-  border: 1px solid rgba(0, 195, 255, 0.2);
+  border: 1px solid rgba(0, 136, 170, 0.15);
 }
 
-/* Custom CSS Architecture Diagram */
+.abstract {
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--accent-cyan);
+  margin-bottom: 2rem;
+}
+
+.abstract-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* Footer Section */
+.paper-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.copyright-text {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+
+/* Complete Diagram System */
+.custom-diagram {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
 .diagram-grid {
   display: flex;
   flex-direction: column;
   position: relative;
+  min-width: 600px;
+}
+
+.diagram-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.diagram-branch-row {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.w-half {
+  width: 45%;
+  text-align: center;
+  font-size: 0.85rem;
 }
 
 .node {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   border: 1px solid var(--glass-border);
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.8);
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
-  backdrop-filter: blur(4px);
   z-index: 2;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .user-node {
   border-color: var(--text-muted);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .react-node {
-  background: rgba(0, 136, 170, 0.1);
+  background: rgba(0, 136, 170, 0.08);
   border-color: rgba(0, 136, 170, 0.3);
   color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.api-node {
+  background: rgba(136, 0, 204, 0.08);
+  border-color: rgba(136, 0, 204, 0.3);
+  color: var(--accent-purple);
+  font-weight: 500;
 }
 
 .data-node {
-  background: rgba(136, 0, 204, 0.1);
-  border-color: rgba(136, 0, 204, 0.3);
-  color: var(--accent-purple);
+  background: rgba(0, 153, 68, 0.08);
+  border-color: rgba(0, 153, 68, 0.3);
+  color: var(--accent-green);
 }
 
+.injection-node {
+  background: rgba(136, 0, 204, 0.1);
+  border-color: rgba(136, 0, 204, 0.4);
+  color: var(--accent-purple);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  width: 80%;
+  text-align: center;
+}
+
+.gemini-node {
+  background: linear-gradient(90deg, rgba(0, 136, 170, 0.15), rgba(136, 0, 204, 0.15));
+  border-color: var(--accent-cyan);
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 136, 170, 0.1);
+}
+
+.ui-node {
+  background: rgba(0, 153, 68, 0.1);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  width: 300px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.empty-node {
+  visibility: hidden;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+/* Connecting Lines */
 .line-down {
   width: 2px;
   height: 24px;
   background-color: var(--text-muted);
-  opacity: 0.3;
+  opacity: 0.25;
   margin: 0 auto;
+}
+
+.pull-up {
+  position: relative;
+  top: -8px;
+  z-index: 0;
+}
+
+.absolute-left-20 {
+  position: absolute;
+  top: -24px;
+  left: 20%;
+  width: 2px;
+  height: 24px;
+  background-color: var(--text-muted);
+  opacity: 0.25;
+}
+
+.absolute-right-20 {
+  position: absolute;
+  top: -24px;
+  right: 20%;
+  width: 2px;
+  height: 24px;
+  background-color: transparent;
+  border-left: 2px dashed var(--text-muted);
+  opacity: 0.25;
 }
 
 .line-branch-left {
@@ -92,7 +343,7 @@
   height: 24px;
   border-left: 2px solid var(--text-muted);
   border-top: 2px solid var(--text-muted);
-  opacity: 0.3;
+  opacity: 0.25;
   border-top-left-radius: 8px;
 }
 
@@ -104,18 +355,18 @@
   height: 24px;
   border-right: 2px solid var(--text-muted);
   border-top: 2px solid var(--text-muted);
-  opacity: 0.3;
+  opacity: 0.25;
   border-top-right-radius: 8px;
 }
 
 .line-converge {
   position: absolute;
-  top: -24px;
+  top: -32px;
   left: 20%;
   width: 60%;
   height: 24px;
   border-bottom: 2px solid var(--text-muted);
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .line-converge::after {
@@ -123,17 +374,30 @@
   position: absolute;
   top: 24px;
   left: -2px;
-  height: 10px;
+  height: 16px;
   width: 2px;
   background: var(--text-muted);
 }
 
-.line-converge::before {
-  content: '';
-  position: absolute;
-  top: 24px;
-  right: -2px;
-  height: 10px;
-  width: 2px;
-  border-left: 2px dashed var(--text-muted);
+/* Mobile Responsiveness for Layout */
+@media (max-width: 768px) {
+  .paper-article {
+    padding: 30px 20px;
+  }
+  
+  .paper-title {
+    font-size: 1.8rem;
+  }
+  
+  .paper-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .abstract {
+    padding: 1.2rem;
+  }
+  
+  .custom-diagram {
+    padding: 1rem;
+  }
 }
