@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Research from './pages/Research';
 import AiApps from './pages/AiApps';
 import PrekshaApp from './apps/Preksha/PrekshaApp';
+import PaperSpiritualAI from './pages/PaperSpiritualAI';
 import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/research/architecture-of-empathy" element={<PaperSpiritualAI />} />
             <Route path="/apps" element={<AiApps />} />
             <Route path="/preksha" element={<PrekshaApp />} />
           </Routes>

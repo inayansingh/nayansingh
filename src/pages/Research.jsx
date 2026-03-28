@@ -1,8 +1,18 @@
 import React from 'react';
 import { BookOpen, ExternalLink, Calendar, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Research.css';
 
-const researchData = [];
+const researchData = [
+  {
+    title: "The Architecture of Empathy: Synthesizing Deterministic Ephemeris with Large Language Models",
+    date: "March 2026",
+    description: "An exploration into the framework of a highly responsive, serverless application serving as an emotionally intelligent virtual spiritual companion. This paper details the integration of structured offline mathematics with dynamic Generative AI prompting.",
+    tags: ["LLM Prompting", "System Architecture", "Digital Mental Health"],
+    link: "/research/architecture-of-empathy",
+    internal: true
+  }
+];
 
 const Research = () => {
   return (
@@ -42,10 +52,17 @@ const Research = () => {
                 </div>
               </div>
               
-              <a href={item.link} className="btn btn-secondary w-full justify-center mt-auto border-t border-glass-border">
-                <span>Read Full Paper</span>
-                <ExternalLink size={16} />
-              </a>
+              {item.internal ? (
+                 <Link to={item.link} className="btn btn-secondary w-full justify-center mt-auto border-t border-glass-border">
+                   <span>Read Full Paper</span>
+                   <ExternalLink size={16} />
+                 </Link>
+              ) : (
+                <a href={item.link} className="btn btn-secondary w-full justify-center mt-auto border-t border-glass-border">
+                  <span>Read Full Paper</span>
+                  <ExternalLink size={16} />
+                </a>
+              )}
             </article>
           ))
         )}
