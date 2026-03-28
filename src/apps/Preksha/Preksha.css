@@ -272,6 +272,23 @@
   border: 2px solid white;
 }
 
+.radha-token-balance {
+  margin-left: auto;
+  background: linear-gradient(135deg, var(--radha-gold), var(--radha-gold-light));
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  font-weight: 700;
+  color: var(--radha-text-dark);
+}
+
+.token-icon {
+  font-size: 1.2rem;
+}
+
 .radha-chat-messages {
   flex: 1;
   padding: 2rem;
@@ -340,6 +357,7 @@
 }
 
 .radha-chat-input-area {
+  position: relative;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
   border-top: 1px solid rgba(212, 175, 55, 0.15);
@@ -347,6 +365,76 @@
   gap: 1rem;
   align-items: flex-end;
 }
+
+.radha-recharge-modal-overlay {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 48px);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  border-radius: 24px;
+}
+
+.radha-recharge-modal {
+  background: linear-gradient(to bottom, #3E2723, #1A1A2E);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 174, 66, 0.4);
+  animation: messageFadeIn 0.4s ease-out;
+}
+
+.recharge-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0px;
+  animation: divineGlow 3s infinite alternate;
+}
+
+.radha-recharge-modal h3 {
+  font-size: 1.6rem;
+  font-family: 'Cinzel', serif;
+  color: var(--radha-saffron-light);
+  margin-top: 5px;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.radha-recharge-modal p {
+  color: #DDD;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.recharge-btn {
+  background: linear-gradient(135deg, #FF6B00, #E65100);
+  color: white;
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.recharge-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.7);
+  color: white;
+}
+
 
 .radha-chat-input {
   flex: 1;

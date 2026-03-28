@@ -28,12 +28,9 @@ const PrekshaApp = () => {
     setStep('chat');
   };
 
-  const handleDonate = (e) => {
-    e.preventDefault();
-    setDonationStatus('processing');
-    setTimeout(() => {
-        setDonationStatus('success');
-    }, 1500);
+  const handleDonateRedirect = (e) => {
+    if (e) e.preventDefault();
+    window.location.href = 'https://payments.cashfree.com/forms/preksha';
   };
 
   const scrollToSection = (id) => {
@@ -50,7 +47,7 @@ const PrekshaApp = () => {
           <button onClick={() => scrollToSection('ai')}>Preksha AI</button>
           <button onClick={() => scrollToSection('about')}>About</button>
           <button onClick={() => scrollToSection('programs')}>Programs</button>
-          <button onClick={() => scrollToSection('donate')} className="prf-nav-donate">Donate</button>
+          <button onClick={handleDonateRedirect} className="prf-nav-donate">Donate</button>
         </div>
       </nav>
 
@@ -61,7 +58,7 @@ const PrekshaApp = () => {
           <p>Spiritual guidance rooted in Vedic wisdom. Blending spirituality and compassion to uplift lives.</p>
           <div className="prf-hero-buttons">
             <button className="prf-btn-primary" onClick={() => scrollToSection('ai')}>Talk to Preksha</button>
-            <button className="prf-btn-secondary" onClick={() => scrollToSection('donate')}>Support Our Mission</button>
+            <button className="prf-btn-secondary" onClick={handleDonateRedirect}>Support Our Mission</button>
           </div>
         </div>
         <div className="prf-hero-image">
@@ -177,9 +174,9 @@ const PrekshaApp = () => {
                    <button className="prf-amt-btn custom" onClick={() => setDonationAmount(9999)}>Custom</button>
                 </div>
 
-                <form onSubmit={handleDonate} className="prf-payment-form">
-                   <button type="submit" className="prf-btn-donate" disabled={donationStatus === 'processing'}>
-                      {donationStatus === 'processing' ? 'Processing...' : `Donate ₹${donationAmount} Securely`}
+                <form onSubmit={handleDonateRedirect} className="prf-payment-form">
+                   <button type="submit" className="prf-btn-donate">
+                      Donate Securely via Cashfree
                    </button>
                    <div className="prf-payment-methods">
                      <span>✓ UPI Accepted</span>
@@ -243,7 +240,7 @@ const PrekshaApp = () => {
                <a href="#programs" onClick={(e) => { e.preventDefault(); scrollToSection('programs'); }}>Programs</a>
             </div>
             <div className="prf-footer-cta">
-               <button onClick={() => scrollToSection('donate')} className="prf-btn-secondary" style={{borderColor: 'rgba(255,255,255,0.3)', color: 'white'}}>Donate Now</button>
+               <button onClick={handleDonateRedirect} className="prf-btn-secondary" style={{borderColor: 'rgba(255,255,255,0.3)', color: 'white'}}>Donate Now</button>
                <p>Contact: info@prekshafoundation.org</p>
             </div>
          </div>

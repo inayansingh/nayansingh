@@ -11,6 +11,30 @@ const ChatInterface = ({ userData }) => {
 
   const chatContainerRef = useRef(null);
   const [isScrolledUp, setIsScrolledUp] = useState(false);
+  const [karmicTokens, setKarmicTokens] = useState(() => {
+    const saved = localStorage.getItem('karmicTokens');
+    return saved !== null ? parseInt(saved, 10) : 5;
+  });
+
+  // Save tokens whenever they change
+  useEffect(() => {
+    localStorage.setItem('karmicTokens', karmicTokens);
+  }, [karmicTokens]);
+
+  // Check for successful payment return
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('payment') === 'success') {
+      setKarmicTokens(prev => prev + 10);
+      
+      // Clean up the URL securely
+      const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+      window.history.replaceState({path: newUrl}, '', newUrl);
+
+      // Add a success message to chat array
+      setMessages([{ role: 'ai', text: "Divine blessings! Your Dakshina has been accepted. 10 Karmic tokens have been replenished to your aura." }]);
+    }
+  }, []);
 
   // Initialize Gemini Model on Mount
   useEffect(() => {
@@ -130,12 +154,13 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
   }, [messages, isTyping]);
 
   const handleSend = async () => {
-    if (!inputVal.trim() || !chatSessionRef.current) return;
+    if (!inputVal.trim() || !chatSessionRef.current || karmicTokens <= 0) return;
 
     const userMsg = inputVal.trim();
     setInputVal('');
     
-    // Optimistically add user message
+    // Optimistically add user message and deduct token
+    setKarmicTokens(prev => prev - 1);
     const newMessages = [...messages, { role: 'user', text: userMsg }];
     setMessages(newMessages);
     setIsTyping(true);
@@ -193,6 +218,10 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
           <h2>Preksha - Your Spiritual Companion</h2>
           <p><span className="radha-status-dot"></span> Divine presence is listening...</p>
         </div>
+        <div className="radha-token-balance">
+          <span className="token-icon">🪙</span>
+          <span className="token-text">Karmic Balance: {karmicTokens}</span>
+        </div>
       </div>
 
       {/* Messages */}
@@ -239,18 +268,34 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
 
       {/* Input */}
       <div className="radha-chat-input-area">
+        {karmicTokens <= 0 && (
+          <div className="radha-recharge-modal-overlay">
+            <div className="radha-recharge-modal">
+              <div className="recharge-icon">✨🪙✨</div>
+              <h3>Recharge Tokens</h3>
+              <p>Access Divine Wisdom. Get 10 Questions for 101 Rupees.</p>
+              <a 
+                href="https://payments.cashfree.com/forms/preksha" 
+                className="recharge-btn"
+              >
+                GET 10 TOKENS ₹101
+              </a>
+            </div>
+          </div>
+        )}
         <textarea
           className="radha-chat-input"
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Pour your heart out here..."
+          placeholder={karmicTokens > 0 ? "Pour your heart out here..." : "Out of Karmic Tokens..."}
           rows={1}
+          disabled={karmicTokens <= 0}
         />
         <button
           className="radha-send-btn"
           onClick={handleSend}
-          disabled={!inputVal.trim() || isTyping}
+          disabled={!inputVal.trim() || isTyping || karmicTokens <= 0}
         >
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </button>
