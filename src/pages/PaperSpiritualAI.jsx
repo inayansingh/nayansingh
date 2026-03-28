@@ -34,7 +34,7 @@ const PaperSpiritualAI = () => {
                 NS
               </div>
               <div>
-                <p className="font-bold text-white">Nayan Kumar Singh</p>
+                <p className="font-bold text-primary">Nayan Kumar Singh</p>
                 <p className="text-sm">Published March 2026</p>
               </div>
             </div>
@@ -42,8 +42,8 @@ const PaperSpiritualAI = () => {
 
           <div className="article-content space-y-8 text-secondary leading-relaxed">
             
-            <section className="abstract bg-black/30 p-6 rounded-xl border border-glass-border border-l-4 border-l-accent-cyan">
-              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <section className="abstract bg-glass-bg p-6 rounded-xl border border-glass-border border-l-4 border-l-accent-cyan">
+              <h3 className="text-xl font-bold text-primary mb-3 flex items-center gap-2">
                  <AlignLeft size={20} className="text-accent-cyan" /> Abstract
               </h3>
               <p>
@@ -52,7 +52,7 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 mt-12 border-b border-glass-border/50 pb-2">1. The Vedic Precedent for Digital Mental Health</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">1. The Vedic Precedent for Digital Mental Health</h2>
               <p className="mb-4">
                 The necessity of cultivating mental well-being is not a modern innovation, but rather a foundational pillar of Vedic sciences. The <em>Yajur Veda</em> explicitly focuses on the cultivation of an auspicious mind in the renowned <strong>Shiva Sankalpa Suktam</strong> (Chapter 34, Verses 1-6), repeatedly ending with the profound mandate: <em>"Tanme manah shiva sankalpam astu"</em> (May my mind be filled with auspicious and peaceful resolves).
               </p>
@@ -62,11 +62,11 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-6 mt-12 border-b border-glass-border/50 pb-2">2. System Architecture</h2>
+              <h2 className="text-2xl font-bold text-primary mb-6 mt-12 border-b border-glass-border pb-2">2. System Architecture</h2>
               <p className="mb-6">To achieve this synthesis between ancient logic and generative capacity, a strict multi-layered serverless pipeline was engineered.</p>
               
               {/* Custom CSS Diagram */}
-              <div className="bg-black/40 border border-glass-border p-8 rounded-2xl overflow-x-auto custom-diagram my-8">
+              <div className="bg-glass-bg border border-glass-border p-8 rounded-2xl overflow-x-auto custom-diagram my-8">
                 <div className="diagram-grid min-w-[600px]">
                    {/* Row 1 */}
                    <div className="flex justify-center mb-6">
@@ -124,14 +124,14 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 mt-12 border-b border-glass-border/50 pb-2">3. Dynamic Empathy Architecting (The Generative Layer)</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">3. Dynamic Empathy Architecting (The Generative Layer)</h2>
               <p>
                 Unlike clinical task-oriented conversational agents, a digital spiritual companion must exhibit cognitive empathy that respects the user's <em>Samskaras</em> (deep-rooted mental patterns). We utilized Google’s Gemini 2.5 Flash model as the core reasoning engine. However, to guarantee an empathetic baseline, the system relies on <strong>Dynamic Persona Injection</strong>. The application proactively captures the user's psychological state via an initial React onboarding layer. This metadata is parsed to dynamically alter the system instructions. An "anxiety" input, for example, forcibly overrides the LLM's standard response tree, instructing the neural network to prioritize grounding algorithms (e.g., breathwork exercises) before delivering predictive advice.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 mt-12 border-b border-glass-border/50 pb-2">4. Algorithmic Tethering via REST APIs (The Deterministic Layer)</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">4. Algorithmic Tethering via REST APIs (The Deterministic Layer)</h2>
               <p className="mb-4">
                 Large Language Models inherently struggle with mathematical certainty, often hallucinating timelines or arbitrary dates when asked for temporal predictions. To solve this, the generative brain is tethered to a strict deterministic mathematical engine.
               </p>
@@ -141,7 +141,7 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 mt-12 border-b border-glass-border/50 pb-2">5. Psychosocial Monetization (The 'Karmic Token' Economy)</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">5. Psychosocial Monetization (The 'Karmic Token' Economy)</h2>
               <p className="mb-4">
                 Mindful engagement is crucial in spiritual counseling. To prevent mindless spamming and enforce a conscious value exchange (<em>Dakshina</em>), the system deploys a stateful "Karmic Economy." The React frontend utilizes browser <code>localStorage</code> variables to track conversation depth. Upon token depletion, the chat loop locks via conditional rendering.
               </p>
@@ -151,7 +151,7 @@ const PaperSpiritualAI = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 mt-12 border-b border-glass-border/50 pb-2">6. Aesthetic Sensorial Integration (UI/UX)</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4 mt-12 border-b border-glass-border pb-2">6. Aesthetic Sensorial Integration (UI/UX)</h2>
               <p>
                 Technical brilliance must be matched by psychological color theory. The application avoids modern software aesthetics (whites, harsh grays, clinical borders). Instead, it implements a meticulously calculated "Divine Aesthetic"—utilizing dark dimensional purples, saffron gradients, and sophisticated frosted glass components (<code>backdrop-filter: blur(8px)</code>). Intelligent DOM referencing ensures the viewport wrapper remains perfectly static, bounded strictly to incoming messages, preventing jarring layout shifts during deep meditative focus.
               </p>
