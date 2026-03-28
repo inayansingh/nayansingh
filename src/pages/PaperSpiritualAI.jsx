@@ -81,7 +81,7 @@ const PaperSpiritualAI = () => {
                          <div className="d-node data-node bg-glass-bg">Preksha Master Persona</div>
                       </div>
                    </div>
-                   <div className="d-line"></div>
+                   <div className="d-converge"><div className="d-converge-drop"></div></div>
                    <div className="d-node injection-node shadow-md text-center py-4 px-8 w-full max-w-md">
                       <strong>NEURAL INJECTION BAY</strong><br/>
                       [Ephemeris Gochar] + [Psychological Directives]
@@ -145,7 +145,7 @@ const PaperSpiritualAI = () => {
                          <div className="d-node data-node text-xs">Bypass Payment Interceptor</div>
                       </div>
                    </div>
-                   <div className="d-line"></div>
+                   <div className="d-converge"><div className="d-converge-drop"></div></div>
                    <div className="d-node gemini-node">Enable Message Pipeline</div>
                 </div>
               </div>
