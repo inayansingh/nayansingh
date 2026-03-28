@@ -100,7 +100,10 @@ const PaperSpiritualAI = () => {
             <section>
               <h2>3. Dynamic Empathy Architecting (The Generative Layer)</h2>
               <p>
-                Unlike clinical task-oriented conversational agents, a digital spiritual companion must exhibit cognitive empathy that respects the user's <em>Samskaras</em> (deep-rooted mental patterns). We utilized Google’s Gemini 2.5 Flash model as the core reasoning engine. However, to guarantee an empathetic baseline, the system relies on <strong>Dynamic Persona Injection</strong>. The application proactively captures the user's psychological state via an initial React onboarding layer. This metadata is parsed to dynamically alter the system instructions. An "anxiety" input, for example, forcibly overrides the LLM's standard response tree, instructing the neural network to prioritize grounding algorithms (e.g., breathwork exercises) before delivering predictive advice.
+                Unlike clinical task-oriented conversational agents, a digital spiritual companion must exhibit cognitive empathy that respects the user's <em>Samskaras</em> (deep-rooted mental patterns). We utilized Google’s Gemini 2.5 Flash model as the core reasoning engine. However, to guarantee an empathetic baseline, the system relies on <strong>Dynamic Master Persona Injection</strong>.
+              </p>
+              <p className="mt-4">
+                The system prompt was fundamentally engineered to force the LLM to strictly adopt the persona of "Preksha Rana", an empathetic spiritual guide. This aggressively prevents the model from reverting to its base identity ("I am a large language model...") and ensures all outputs adhere to a rigidly therapeutic, Vedic-aligned dialect. Additionally, an initial React onboarding layer proactively captures the user's psychological state. This metadata dynamically alters the instructions—an "anxiety" input, for example, overrides the standard response tree, instructing the neural network to prioritize grounding algorithms before delivering predictive advice.
               </p>
             </section>
 
@@ -119,33 +122,26 @@ const PaperSpiritualAI = () => {
               <p>
                 Mindful engagement is crucial in spiritual counseling. To prevent mindless spamming and enforce a conscious value exchange (<em>Dakshina</em>), the system deploys a stateful "Karmic Economy." The React frontend utilizes browser <code>localStorage</code> variables to track conversation depth. Upon token depletion, the chat loop locks via conditional rendering.
               </p>
-              <p>
+              <p className="mt-4">
                 For monetization on a serverless edge architecture without a dedicated WebSocket or Database verifier, we implemented an <strong>Intelligent Redirect Loop</strong>. When users utilize the Cashfree Payment Gateway, success signals are passed back onto the application via sanitized URL query parameters (e.g., <code>?payment=success</code>). The React router intercepts this, instantly injects token states, cleanses the browser history state to prevent manipulation, and unlocks the application seamlessly.
               </p>
+              <p className="mt-4">
+                To maintain structural integrity during debugging without triggering the CashFree redirect loop or depleting the local economy, a strict <strong>Administrative Core Bypass</strong> was concurrently integrated. A hardcoded <code>isUnlimitedUser</code> conditional hook securely intercepts the React authentication layer for designated architectural maintainers, dynamically nullifying token depletion mechanisms across the entire UI state tree.
+              </p>
             </section>
 
             <section>
-              <h2>6. Aesthetic Sensorial Integration (UI/UX)</h2>
+              <h2>6. Aesthetic Sensorial Integration & Generative UI</h2>
               <p>
-                Technical brilliance must be matched by psychological color theory. The application avoids modern software aesthetics (whites, harsh grays, clinical borders). Instead, it implements a meticulously calculated "Divine Aesthetic"—utilizing dark dimensional purples, saffron gradients, and sophisticated frosted glass components (<code>backdrop-filter: blur(8px)</code>). Intelligent DOM referencing ensures the viewport wrapper remains perfectly static, bounded strictly to incoming messages, preventing jarring layout shifts during deep meditative focus.
+                Technical brilliance must be matched by psychological color theory. To bridge the "Uncanny Valley" and establish genuine user trust, the application relies heavily on <strong>Generative Avatar Engineering</strong>. Physical photographic references were mapped through an image-to-image stable diffusion layer. The output—a hyper-realistic, ethereal rendering matching the platform's exact aura—was embedded as the literal, breathing face of the chat interface, seamlessly unifying the visual and neural layers.
               </p>
-            </section>
-            
-            <section>
-              <h2>7. Project Architecture Expansions (Phase II)</h2>
-              <p>
-                In subsequent developmental phases, the application underwent significant architectural upgrades to better serve its target demographic:
+              <p className="mt-4">
+                Surrounding this persona, the DOM abstraction was engineered into a complete <strong>Digital Sanctuary</strong> utilizing a newly architected 'Light Spiritual Radha' schema. The application avoids modern software aesthetics entirely, implementing instead a meticulously calculated divine atmosphere. This includes complex CSS layering for floating background ambient orbs (utilizing continuously sweeping <code>@keyframes</code> curves), translucent frosted glass chat nodes (<code>backdrop-filter: blur(8px)</code>), and warm morning-saffron gradients. Intelligent DOM referencing ensures the viewport wrapper remains perfectly static, preventing jarring layout shifts during deep meditative focus and proving that visual harmony is as critical as algorithmic intelligence in digital mental health applications.
               </p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '20px', marginBottom: '1.5rem', opacity: 0.9 }}>
-                 <li style={{ marginBottom: '0.75rem' }}><strong>Master Persona Integration:</strong> The system prompt was fundamentally rewritten to strictly adopt the persona of "Preksha Rana", an empathetic spiritual guide. This prevented the LLM from reverting to its base identity ("I am a large language model created by Google") and ensured all token outputs adhered to a strictly therapeutic, Vedic-aligned dialect.</li>
-                 <li style={{ marginBottom: '0.75rem' }}><strong>Generative Avatar Engineering:</strong> To bridge the "Uncanny Valley" and establish trust, physical photographic references of the persona were mapped through an image-to-image stable diffusion layer. The output—a hyper-realistic, ethereal rendering matching the exact UI aesthetic—was embedded as the literal face of the chat interface, unifying the visual and generative layers.</li>
-                 <li style={{ marginBottom: '0.75rem' }}><strong>Administrative Token Bypassing:</strong> To allow core maintainers unrestricted analysis of the generative pipelines without depleting the stateful Karmic Economy, a hardcoded <code>isUnlimitedUser</code> conditional bypass was hooked directly into the React authentication state, preventing the CashFree checkout interceptor from ever mounting for authorized clients.</li>
-                 <li><strong>The 'Light Spiritual Radha' Theme:</strong> The DOM abstraction was heavily refactored from a standard dashboard into a 'Digital Sanctuary'. This included deep CSS engineering for floating background orbs (utilizing mathematically smooth <code>@keyframes</code>), translucent frosted glass chat nodes, and warm morning-saffron gradients, proving that psychological color theory is just as critical as algorithmic intelligence in digital mental health applications.</li>
-              </ul>
             </section>
 
             <section>
-              <h2>8. Conclusion</h2>
+              <h2>7. Conclusion</h2>
               <p>
                 By synthesizing rigorous offline mathematical pipelines with emotionally-weighted prompt engineering and culturally-resonant Vedic frameworks, we achieve a highly scalable, serverless digital companion capable of genuine spiritual validation and structurally sound predictive guidance.
               </p>
