@@ -209,19 +209,21 @@
 .academic-title {
   color: var(--text-primary);
   font-family: inherit; 
+  font-size: 1.1rem; /* Matches Experience h4 */
 }
 
 .academic-text {
-  font-size: 1.15rem;
+  font-size: 0.9rem; /* Matches Experience content */
   opacity: 0.9;
 }
 
 .academic-btn {
   display: inline-flex;
   align-items: center;
-  padding: 1rem 2.5rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 30px;
   font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
