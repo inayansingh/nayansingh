@@ -9,6 +9,9 @@ const ChatInterface = ({ userData }) => {
   const messagesEndRef = useRef(null);
   const chatSessionRef = useRef(null);
 
+  const chatContainerRef = useRef(null);
+  const [isScrolledUp, setIsScrolledUp] = useState(false);
+
   // Initialize Gemini Model on Mount
   useEffect(() => {
     const initChat = async () => {
@@ -76,9 +79,35 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
     initChat();
   }, [userData]);
 
-  // Auto-scroll to bottom
+  const handleScroll = (e) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.target;
+    // Give 60px tolerance to count as being "at bottom"
+    if (scrollHeight - scrollTop - clientHeight > 60) {
+      setIsScrolledUp(true);
+    } else {
+      setIsScrolledUp(false);
+    }
+  };
+
+  const forceScrollDown = () => {
+    setIsScrolledUp(false);
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Auto-scroll to bottom conditionally
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (!isScrolledUp && chatContainerRef.current) {
+      // Use scrollTo on the container to prevent the entire web page from jumping
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
   }, [messages, isTyping]);
 
   const handleSend = async () => {
@@ -148,7 +177,11 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
       </div>
 
       {/* Messages */}
-      <div className="radha-chat-messages">
+      <div 
+        className="radha-chat-messages" 
+        ref={chatContainerRef}
+        onScroll={handleScroll}
+      >
         {messages.map((msg, idx) => (
           <div key={idx} className={`radha-message ${msg.role}`}>
             {msg.role === 'ai' && (
@@ -163,7 +196,7 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
         ))}
 
         {isTyping && (
-          <div className="radha-message ai">
+          <div className="radha-message ai radha-typing">
             <img src={radhaAvatar} alt="AI" className="radha-ai-avatar-small" />
             <div className="radha-message-bubble typing-indicator">
               <div className="typing-dot"></div>
@@ -172,8 +205,18 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
             </div>
           </div>
         )}
-        <div ref={messagesEndRef} />
+        <div ref={messagesEndRef} className="scroll-anchor" />
       </div>
+
+      {isScrolledUp && (
+        <button 
+          className="radha-scroll-bottom-btn" 
+          onClick={forceScrollDown}
+          aria-label="Scroll to bottom"
+        >
+          ↓ New messages
+        </button>
+      )}
 
       {/* Input */}
       <div className="radha-chat-input-area">

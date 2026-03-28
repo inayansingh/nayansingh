@@ -280,13 +280,19 @@
   flex-direction: column;
   gap: 1.5rem;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 251, 242, 0.6));
+  scroll-behavior: smooth;
+  overflow-anchor: auto;
+}
+
+.scroll-anchor {
+  height: 1px;
 }
 
 .radha-message {
   max-width: 80%;
   display: flex;
   gap: 1rem;
-  animation: messageFadeIn 0.3s ease forwards;
+  animation: messageFadeIn 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
 }
 
 .radha-message.user {
@@ -406,8 +412,31 @@
   animation: typingBounce 1.4s infinite ease-in-out both;
 }
 
-.typing-dot:nth-child(1) { animation-delay: -0.32s; }
 .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+.radha-scroll-bottom-btn {
+  position: absolute;
+  bottom: 100px;
+  right: 50%;
+  transform: translateX(50%);
+  background: white;
+  color: var(--radha-text-dark);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 100;
+  animation: messageFadeIn 0.3s ease-out;
+  transition: all 0.2s ease;
+}
+
+.radha-scroll-bottom-btn:hover {
+  background: var(--radha-pink-light);
+  transform: translateX(50%) translateY(-2px);
+}
 
 @keyframes divineGlow {
   0% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
