@@ -64,35 +64,30 @@ const PaperSpiritualAI = () => {
               <h2>2. System Architecture</h2>
               <p>To achieve this synthesis between ancient logic and generative capacity, a strict multi-layered serverless pipeline was engineered.</p>
               
-              {/* Single Column Secure Architecture Diagram */}
+              {/* Branching Multi-Node Secure Architecture Diagram */}
               <div className="bg-glass-bg custom-diagram">
                 <div className="diagram-spine">
-                   <div className="d-node user-node border-2">User Distress Query</div>
+                   <div className="d-node user-node border-2">HTTPS TLS/Edge Request</div>
                    <div className="d-line"></div>
-                   
-                   <div className="d-node react-node">Strict React Client & Onboarding Layer</div>
-                   <div className="d-line"></div>
-                   
-                   <div className="d-node data-node w-full">Location Geocoding & Emotional Context Capture</div>
-                   <div className="d-line"></div>
-                   
-                   <div className="d-node api-node">Prokerala Vedic API (Serverless Math Engine)</div>
-                   <div className="d-line"></div>
-                   
-                   <div className="d-node injection-node shadow-md text-center py-4">
-                      <strong>SYSTEM INJECTION</strong><br/>
-                      [Deterministic Ephemeris] + [User Psychological Persona]
+                   <div className="d-split">
+                      <div className="d-split-col">
+                         <div className="d-node react-node">Location Geocoding</div>
+                         <div className="d-line"></div>
+                         <div className="d-node api-node">Prokerala Vedic Auth Engine</div>
+                      </div>
+                      <div className="d-split-col">
+                         <div className="d-node react-node">Samskara Payload (React)</div>
+                         <div className="d-line"></div>
+                         <div className="d-node data-node bg-glass-bg">Preksha Master Persona</div>
+                      </div>
                    </div>
                    <div className="d-line"></div>
-                   
-                   <div className="d-node gemini-node py-5">
-                      Gemini 2.5 Flash Neural Engine
+                   <div className="d-node injection-node shadow-md text-center py-4 px-8 w-full max-w-md">
+                      <strong>NEURAL INJECTION BAY</strong><br/>
+                      [Ephemeris Gochar] + [Psychological Directives]
                    </div>
                    <div className="d-line"></div>
-                   
-                   <div className="d-node ui-node border-2 border-accent-green">
-                      Glassmorphism Divine UI Stream
-                   </div>
+                   <div className="d-node gemini-node py-4 w-full max-w-sm">Gemini 2.5 Flash LLM</div>
                 </div>
               </div>
             </section>
@@ -128,6 +123,32 @@ const PaperSpiritualAI = () => {
               <p className="mt-4">
                 To maintain structural integrity during debugging without triggering the CashFree redirect loop or depleting the local economy, a strict <strong>Administrative Core Bypass</strong> was concurrently integrated. A hardcoded <code>isUnlimitedUser</code> conditional hook securely intercepts the React authentication layer for designated architectural maintainers, dynamically nullifying token depletion mechanisms across the entire UI state tree.
               </p>
+
+              {/* Karmic Economy State Machine Diagram */}
+              <div className="bg-glass-bg custom-diagram mt-8">
+                <div className="diagram-spine max-w-md">
+                   <div className="d-node user-node">Initial Chat Hook</div>
+                   <div className="d-line"></div>
+                   <div className="d-split">
+                      <div className="d-split-col">
+                         <div className="d-node api-node">Standard User</div>
+                         <div className="d-line"></div>
+                         <div className="d-node react-node text-xs">localStorage JWT Token Check</div>
+                         <div className="d-line"></div>
+                         <div className="d-node injection-node border-red-400">CashFree Trigger (Zero Balance)</div>
+                      </div>
+                      <div className="d-split-col">
+                         <div className="d-node react-node">Admin Bypass</div>
+                         <div className="d-line"></div>
+                         <div className="d-node ui-node">isUnlimitedUser == true</div>
+                         <div className="d-line"></div>
+                         <div className="d-node data-node text-xs">Bypass Payment Interceptor</div>
+                      </div>
+                   </div>
+                   <div className="d-line"></div>
+                   <div className="d-node gemini-node">Enable Message Pipeline</div>
+                </div>
+              </div>
             </section>
 
             <section>
@@ -138,6 +159,22 @@ const PaperSpiritualAI = () => {
               <p className="mt-4">
                 Surrounding this persona, the DOM abstraction was engineered into a complete <strong>Digital Sanctuary</strong> utilizing a newly architected 'Light Spiritual Radha' schema. The application avoids modern software aesthetics entirely, implementing instead a meticulously calculated divine atmosphere. This includes complex CSS layering for floating background ambient orbs (utilizing continuously sweeping <code>@keyframes</code> curves), translucent frosted glass chat nodes (<code>backdrop-filter: blur(8px)</code>), and warm morning-saffron gradients. Intelligent DOM referencing ensures the viewport wrapper remains perfectly static, preventing jarring layout shifts during deep meditative focus and proving that visual harmony is as critical as algorithmic intelligence in digital mental health applications.
               </p>
+
+              {/* Generative UI Pipeline Diagram */}
+              <div className="bg-glass-bg custom-diagram mt-8">
+                <div className="diagram-spine max-w-sm">
+                   <div className="d-node react-node">Photographic References</div>
+                   <div className="d-line"></div>
+                   <div className="d-node api-node">Stable Diffusion (Image-to-Image)</div>
+                   <div className="d-line"></div>
+                   <div className="d-node data-node">Hyper-Realistic Avatar Rendering</div>
+                   <div className="d-line"></div>
+                   <div className="d-node ui-node shadow-xl text-center">
+                      <strong>Digital Sanctuary Framing</strong><br/>
+                      Frosted Glass + Orbs + Saffron HSL
+                   </div>
+                </div>
+              </div>
             </section>
 
             <section>
