@@ -6,22 +6,27 @@
 
 .research-article h2 {
   font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .research-article p {
-  line-height: 1.8;
-  font-size: 1.05rem;
-  color: #a0aec0;
+  line-height: 2.1;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  margin-bottom: 1.75rem;
 }
 
 .research-article strong {
-  color: #e2e8f0;
-  font-weight: 700;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .research-article em {
-  color: #cbd5e1;
+  color: #f1f5f9;
   font-style: italic;
 }
 
