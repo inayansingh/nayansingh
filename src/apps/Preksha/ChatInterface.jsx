@@ -209,6 +209,23 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
 
   return (
     <div className="radha-chat-container">
+      {karmicTokens <= 0 && (
+        <div className="radha-recharge-modal-overlay">
+          <div className="radha-recharge-modal">
+            <div className="recharge-icon">✨🪙✨</div>
+            <h3>Recharge Tokens</h3>
+            <p>Access Divine Wisdom. Get 10 Questions for 101 Rupees.</p>
+            <a 
+              href="https://payments.cashfree.com/forms/preksha" 
+              className="recharge-btn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GET 10 TOKENS ₹101
+            </a>
+          </div>
+        </div>
+      )}
       {/* Header */}
       <div className="radha-chat-header">
         <div className="radha-avatar-wrapper">
@@ -268,21 +285,6 @@ Use this data to frame your astrology insights. Use emojis sparingly. Keep respo
 
       {/* Input */}
       <div className="radha-chat-input-area">
-        {karmicTokens <= 0 && (
-          <div className="radha-recharge-modal-overlay">
-            <div className="radha-recharge-modal">
-              <div className="recharge-icon">✨🪙✨</div>
-              <h3>Recharge Tokens</h3>
-              <p>Access Divine Wisdom. Get 10 Questions for 101 Rupees.</p>
-              <a 
-                href="https://payments.cashfree.com/forms/preksha" 
-                className="recharge-btn"
-              >
-                GET 10 TOKENS ₹101
-              </a>
-            </div>
-          </div>
-        )}
         <textarea
           className="radha-chat-input"
           value={inputVal}

@@ -214,6 +214,7 @@
   flex-direction: column;
   height: 85vh;
   max-height: 800px;
+  position: relative;
 }
 
 .radha-chat-header {
@@ -368,17 +369,17 @@
 
 .radha-recharge-modal-overlay {
   position: absolute;
-  top: -24px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% + 48px);
-  background: rgba(255, 255, 255, 0.65);
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50;
-  border-radius: 24px;
+  z-index: 1000;
+  border-radius: 12px;
 }
 
 .radha-recharge-modal {
