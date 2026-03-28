@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Star, Users, MessageCircle, Shield, CheckCircle, Smartphone, Globe } from 'lucide-react';
+import { Heart, Star, Compass, Shield, Hexagon, Activity, Sparkles } from 'lucide-react';
 import Onboarding from './Onboarding';
 import ChatInterface from './ChatInterface';
 import './Preksha.css';
 import './PrfStyles.css';
-import divineAvatar from '../../assets/images/divine_preksha.png';
 
 const PrekshaApp = () => {
   const [step, setStep] = useState('onboarding');
@@ -14,7 +13,7 @@ const PrekshaApp = () => {
 
   useEffect(() => {
     if (step === 'onboarding') {
-      document.title = 'Preksha Rana Foundation';
+      document.title = 'Sanctuary | Preksha Rana Foundation';
     } else if (step === 'chat' && userData?.fullName) {
       document.title = userData.fullName;
     }
@@ -41,212 +40,142 @@ const PrekshaApp = () => {
     <div className="prf-container">
       {/* Navigation */}
       <nav className="prf-navbar">
-        <div className="prf-logo">Preksha Rana Foundation</div>
+        <div className="prf-logo">Cosmic Blueprint</div>
         <div className="prf-nav-links">
-          <button onClick={() => scrollToSection('home')}>Home</button>
-          <button onClick={() => scrollToSection('ai')}>Preksha AI</button>
-          <button onClick={() => scrollToSection('about')}>About</button>
-          <button onClick={() => scrollToSection('programs')}>Programs</button>
-          <button onClick={handleDonateRedirect} className="prf-nav-donate">Donate</button>
+          <button onClick={() => scrollToSection('home')}>Sanctuary</button>
+          <button onClick={() => scrollToSection('ai')}>Sacred Guide</button>
+          <button onClick={() => scrollToSection('programs')}>Pillars</button>
+          <button onClick={handleDonateRedirect} className="prf-nav-donate">Offer Dakshina</button>
         </div>
       </nav>
 
-      {/* SECTION 1: HERO */}
+      {/* SECTION 1: HERO PORTAL */}
       <section id="home" className="prf-hero">
-        <div className="prf-hero-content">
-          <h1>Healing Minds,<br/>Guiding Souls</h1>
-          <p>Spiritual guidance rooted in Vedic wisdom. Blending spirituality and compassion to uplift lives.</p>
-          <div className="prf-hero-buttons">
-            <button className="prf-btn-primary" onClick={() => scrollToSection('ai')}>Talk to Preksha</button>
-            <button className="prf-btn-secondary" onClick={handleDonateRedirect}>Support Our Mission</button>
+        <div className="prf-glass-panel prf-hero-card">
+          <Hexagon className="prf-sacred-icon" size={48} strokeWidth={1} />
+          <div className="prf-hero-content">
+            <h1>Awaken Your Cosmic Blueprint</h1>
+            <p>Embrace the journey. Align with your truest self. Find balance & harmony in the universe through profoundly empathetic, mathematically precise Vedic guidance.</p>
+            <button className="prf-btn-primary" onClick={() => scrollToSection('ai')}>Seek Guidance</button>
           </div>
-        </div>
-        <div className="prf-hero-image">
-           <div className="prf-avatar-glow"></div>
-           <img src={divineAvatar} alt="Divine Preksha Avatar" />
         </div>
       </section>
 
-      {/* SECTION 2: PREKSHA (CENTERPIECE) */}
+      {/* SECTION 2: AI SANCTUARY (THE CORE APP) */}
       <section id="ai" className="prf-ai-section">
         <div className="prf-section-header">
-           <h2>Preksha – Your Spiritual Companion</h2>
-           <p>A divine companion that understands your life through your kundali and guides you with compassion.</p>
+          <h2>The Divine Mirror</h2>
+          <p>Begin your dialogue with Preksha. Free of worldly judgments, anchored in astrological truth.</p>
         </div>
         
-        <div className="prf-ai-split">
-          <div className="prf-ai-features">
-             <div className="prf-feature-card">
-               <Star className="prf-icon" size={32} />
-               <h3>Kundali-Based Insights</h3>
-               <p>Personalized wisdom based on your exact birth planetary alignments and transits.</p>
-             </div>
-             <div className="prf-feature-card">
-               <Heart className="prf-icon" size={32} />
-               <h3>Emotional Healing</h3>
-               <p>Gentle, non-judgmental support to help you navigate anxiety, sadness, and confusion.</p>
-             </div>
-             <div className="prf-feature-card">
-               <MessageCircle className="prf-icon" size={32} />
-               <h3>Astrology-Powered Advice</h3>
-               <p>Actionable guidance and specific timelines for your career, relationships, and health.</p>
-             </div>
+        {/* WRAP THE ORIGINAL APP SAFELY - WE PRESERVE THE INNER LIGHT THEME FOR READABILITY */}
+        <div className="prf-ai-app-wrapper">
+          <div className="radha-app-container">
+            {step === 'onboarding' ? (
+              <Onboarding onComplete={handleOnboardingComplete} />
+            ) : (
+              <ChatInterface userData={userData} />
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: CORE PILLARS */}
+      <section id="programs" className="prf-programs">
+        <div className="prf-section-header">
+          <h2>Architects of the Soul</h2>
+          <p>The Preksha Rana Foundation operates on three immutable pillars of divine interaction.</p>
+        </div>
+
+        <div className="prf-programs-grid">
+          <div className="prf-glass-panel prf-program-card">
+            <Compass size={40} strokeWidth={1.5} />
+            <h3>Astrological Determinism</h3>
+            <p>Anchored by the precise mathematics of the planetary ephemeris. We do not hallucinate the future—we calculate the current transit.</p>
           </div>
           
-          <div className="prf-ai-app-wrapper">
-             {step === 'onboarding' && <Onboarding onComplete={handleOnboardingComplete} />}
-             {step === 'chat' && userData && <ChatInterface userData={userData} />}
+          <div className="prf-glass-panel prf-program-card">
+            <Heart size={40} strokeWidth={1.5} />
+            <h3>Emotional Sanctuary</h3>
+            <p>Operating through the lens of Sakshi Bhava (witness consciousness), we provide a judgment-free space to untangle mortal anxieties.</p>
+          </div>
+
+          <div className="prf-glass-panel prf-program-card">
+            <Activity size={40} strokeWidth={1.5} />
+            <h3>Selfless Seva</h3>
+            <p>Every digital interaction is bound to a karmic economy, ensuring your spiritual healing directly funds real-world interventions.</p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: ABOUT FOUNDATION */}
-      <section id="about" className="prf-about">
-         <div className="prf-about-centered">
-            <h2>About Preksha Rana Foundation</h2>
-            <p className="prf-mission-statement">
-              Our mission is to bring spiritual mental health and accessible emotional healing to everyone, especially the underprivileged. We envision a world where the ancient wisdom of Vedic astrology meets boundless empathy to provide solace, guidance, and peace of mind at scale.
-            </p>
-         </div>
-      </section>
-
-      {/* SECTION 4: IMPACT */}
-      <section className="prf-impact">
-        <div className="prf-impact-grid">
-          <div className="prf-impact-stat">
-            <Users size={48} className="prf-icon-gold" />
-            <h3>10,000+</h3>
-            <p>Lives Touched</p>
-          </div>
-          <div className="prf-impact-stat">
-            <MessageCircle size={48} className="prf-icon-gold" />
-            <h3>50,000+</h3>
-            <p>AI Sessions Delivered</p>
-          </div>
-          <div className="prf-impact-stat">
-            <Globe size={48} className="prf-icon-gold" />
-            <h3>15+</h3>
-            <p>Communities Reached</p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5: DONATION (HIGH-CONVERSION BLOCK) */}
+      {/* SECTION 4: KARMIC EXCHANGE / DAKSHINA */}
       <section id="donate" className="prf-donation-funnel">
-         <div className="prf-donation-container">
-            <div className="prf-donation-trigger">
-               <h2>Support Healing & Awareness</h2>
-               <p className="prf-emotional-line">"Someone today is struggling silently. Your support can bring them clarity, peace, and guidance."</p>
+        <div className="prf-glass-panel prf-donation-container">
+          {donationStatus === 'success' ? (
+            <div className="prf-donation-success">
+              <CheckCircle size={80} color="var(--prf-gold)" />
+              <h3>Blessings Received</h3>
+              <p className="prf-blessing">"May the universe align to grant you peace. Your Karma Tokens are replenished."</p>
+              <button 
+                className="prf-btn-primary" 
+                onClick={() => { setDonationStatus('idle'); scrollToSection('ai'); }}
+              >
+                Return to Sanctuary
+              </button>
             </div>
-            
-            {donationStatus === 'success' ? (
-              <div className="prf-donation-success">
-                <CheckCircle size={80} color="#4CAF50" />
-                <h3>Thank You!</h3>
-                <p>You just helped someone find peace today. 🌸</p>
-                <p className="prf-blessing">May the divine universe shower you with abundance and joy.</p>
-                <button className="prf-btn-primary" onClick={() => scrollToSection('ai')} style={{marginTop: '2rem'}}>
-                  Experience Preksha Yourself
+          ) : (
+            <div className="prf-donation-trigger">
+              <Star className="prf-sacred-icon" size={40} strokeWidth={1} style={{marginBottom:'1rem'}} />
+              <h2>Offer Dakshina</h2>
+              <p className="prf-emotional-line">Replenish your Karmic Tokens by funding mental health awareness.</p>
+              
+              <div className="prf-donation-amounts">
+                {[101, 501, 1100, 2100].map(amt => (
+                  <button 
+                    key={amt}
+                    className={`prf-amt-btn ${donationAmount === amt ? 'selected' : ''}`}
+                    onClick={() => setDonationAmount(amt)}
+                  >
+                    ₹{amt}
+                  </button>
+                ))}
+              </div>
+
+              <div className="prf-payment-form">
+                <button 
+                  className="prf-btn-donate" 
+                  onClick={handleDonateRedirect}
+                  disabled={donationStatus === 'processing'}
+                >
+                  {donationStatus === 'processing' ? 'Connecting to Source...' : `Exchange ₹${donationAmount}`}
                 </button>
-              </div>
-            ) : (
-              <div className="prf-donation-box">
-                <div className="prf-impact-mapping">
-                   <div className={donationAmount === 101 ? 'prf-map active' : 'prf-map'} onClick={() => setDonationAmount(101)}>
-                     <strong>₹101</strong><span>Funds 1 healing session</span>
-                   </div>
-                   <div className={donationAmount === 501 ? 'prf-map active' : 'prf-map'} onClick={() => setDonationAmount(501)}>
-                     <strong>₹501</strong><span>Supports 10 people</span>
-                   </div>
-                   <div className={donationAmount === 1100 ? 'prf-map active' : 'prf-map'} onClick={() => setDonationAmount(1100)}>
-                     <strong>₹1100</strong><span>Sponsors a community</span>
-                   </div>
+                
+                <div className="prf-payment-methods">
+                  <span><Shield size={14} style={{display:'inline', marginRight:'4px'}}/> Secure Gateway</span>
+                  <span>UPI</span>
+                  <span>Cards</span>
+                  <span>Netbanking</span>
                 </div>
-
-                <div className="prf-donation-amounts">
-                   {[101, 501, 1100].map(amt => (
-                     <button 
-                       key={amt} 
-                       className={`prf-amt-btn ${donationAmount === amt ? 'selected' : ''}`}
-                       onClick={() => setDonationAmount(amt)}
-                     >₹{amt}</button>
-                   ))}
-                   <button className="prf-amt-btn custom" onClick={() => setDonationAmount(9999)}>Custom</button>
-                </div>
-
-                <form onSubmit={handleDonateRedirect} className="prf-payment-form">
-                   <button type="submit" className="prf-btn-donate">
-                      Donate Securely via Cashfree
-                   </button>
-                   <div className="prf-payment-methods">
-                     <span>✓ UPI Accepted</span>
-                     <span>✓ Credit/Debit Cards</span>
-                     <span>✓ Net Banking</span>
-                   </div>
-                </form>
               </div>
-            )}
-         </div>
-      </section>
-
-      {/* SECTION 6: PROGRAMS */}
-      <section id="programs" className="prf-programs">
-        <h2>Our Core Programs</h2>
-        <div className="prf-programs-grid">
-           <div className="prf-program-card">
-              <Smartphone size={40} />
-              <h3>Spiritual Guidance</h3>
-              <p>Free, continuous access to empathetic astrological counseling through Preksha.</p>
-           </div>
-           <div className="prf-program-card">
-              <Shield size={40} />
-              <h3>Mental Health Awareness</h3>
-              <p>Conducting workshops and campaigns to destigmatize mental health in spiritual contexts.</p>
-           </div>
-           <div className="prf-program-card">
-              <Heart size={40} />
-              <h3>Support for Underprivileged</h3>
-              <p>Ensuring marginalized communities get free access to healing tools and essential support.</p>
-           </div>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* SECTION 7: TESTIMONIALS */}
-      <section className="prf-testimonials">
-         <h2>Stories of Transformation</h2>
-         <div className="prf-testimonial-carousel">
-            <div className="prf-testimonial">
-               <p>"I was lost in a sea of anxiety. Preksha didn't just give me predictions; it gave me peace. The breathing exercises changed my daily routine."</p>
-               <span>— Anjali S.</span>
-            </div>
-            <div className="prf-testimonial">
-               <p>"Finding a safe space to discuss both my karmic path and my practical career fears was impossible until I found this foundation."</p>
-               <span>— Rohan M.</span>
-            </div>
-         </div>
-      </section>
-
-      {/* SECTION 8: FOOTER */}
+      {/* FOOTER */}
       <footer className="prf-footer">
-         <div className="prf-footer-content">
-            <div className="prf-footer-logo">
-               <h3>Preksha Rana Foundation</h3>
-               <p>Healing minds, guiding souls.</p>
-            </div>
-            <div className="prf-footer-links">
-               <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
-               <a href="#ai" onClick={(e) => { e.preventDefault(); scrollToSection('ai'); }}>Preksha AI</a>
-               <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
-               <a href="#programs" onClick={(e) => { e.preventDefault(); scrollToSection('programs'); }}>Programs</a>
-            </div>
-            <div className="prf-footer-cta">
-               <button onClick={handleDonateRedirect} className="prf-btn-secondary" style={{borderColor: 'rgba(255,255,255,0.3)', color: 'white'}}>Donate Now</button>
-               <p>Contact: info@prekshafoundation.org</p>
-            </div>
-         </div>
-         <div className="prf-footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Preksha Rana Foundation. All rights reserved.</p>
-         </div>
+        <div className="prf-footer-content">
+          <div className="prf-footer-logo">
+            <h3>Preksha Rana Foundation</h3>
+            <p className="prf-footer-cta">
+              Dedicated to integrating advanced AI with ancient Vedic wisdom,<br/>
+              building safe sanctuaries for the mind.
+            </p>
+          </div>
+        </div>
+        <div className="prf-footer-bottom">
+          <p>© {new Date().getFullYear()} Preksha Rana Foundation. Initiated by Nayan Kumar Singh. A sys.research_logs project.</p>
+        </div>
       </footer>
     </div>
   );
