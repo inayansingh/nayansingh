@@ -31,29 +31,57 @@ export default async function handler(req, res) {
       }
     }
 
-    // Dynamic import to avoid breaking standard environments if module lacks common js
-    const { generateRasiChart, getCompactAnalysisContext } = await import('vedic-calc');
-
-    // 2. Calculate accurate local ephemeris using Swiss Ephemeris wrapper
-    const chart = generateRasiChart(birthDate, lat, lon, "Asia/Kolkata");
+    // 2. Fetch Token from Prokerala Sandbox/Prod
+    const clientId = '1655852a-e88d-4bfe-954e-95c13530fb9f';
+    const clientSecret = '0LLP8RIAw0BWq5Qtcwk6xQWacI9KqbUbNg3YhAOW';
     
-    // 3. Generate an AI ready context with Dashas, Transits, Yogas
-    // We pass today's date so it calculates the *current active* transits and dashas
-    const compactContext = getCompactAnalysisContext(chart, new Date(), {
-      transitPlanets: ["Saturn", "Jupiter", "Rahu", "Ketu", "Sun", "Moon"],
-      maxBeneficYogas: 3,
-      maxChallengingYogas: 2,
-      includeBirthLocation: false
+    const tokenBody = new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: clientId,
+      client_secret: clientSecret
     });
 
+    const tokenRes = await fetch('https://api.prokerala.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: tokenBody
+    });
+    
+    if (!tokenRes.ok) {
+       throw new Error("Prokerala Auth Failed: " + await tokenRes.text());
+    }
+    const tokenData = await tokenRes.json();
+    const token = tokenData.access_token;
+
+    // 3. Fetch Planet Positions from Prokerala API
+    // ISO format: 2004-02-12T15:19:21+05:30
+    const isoDateTime = birthDate.toISOString().replace('.000Z', '+00:00'); // simplified UTC representation
+    const apiUrl = `https://api.prokerala.com/v2/astrology/planet-position?datetime=${encodeURIComponent(isoDateTime)}&coordinates=${lat},${lon}&ayanamsa=1`;
+    
+    const astroRes = await fetch(apiUrl, {
+      method: 'GET',
+      headers: { 
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json' 
+      }
+    });
+
+    let astroContext = {};
+    if (astroRes.ok) {
+       const astroData = await astroRes.json();
+       astroContext = astroData.data || astroData;
+    } else {
+       console.error("Prokerala Data Fetch Failed", await astroRes.text());
+    }
+
     const ephemerisString = `MATHEMATICAL EPHEMERIS FACTS FOR ${date}:
-Please base all astrological predictions strictly on this precise structural data:
-${JSON.stringify(compactContext, null, 2)}`;
+Please base all astrological predictions strictly on this precise structural planetary data fetched from Prokerala Astrological API:
+${JSON.stringify(astroContext, null, 2)}`;
 
     return res.status(200).json({ ephemeris: ephemerisString });
 
   } catch (error) {
-    console.error("Local Ephemeris Error:", error);
+    console.error("API Ephemeris Error:", error);
     return res.status(500).json({ error: 'Internal Server Error', details: error.message });
   }
 }
