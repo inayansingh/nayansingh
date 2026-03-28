@@ -38,6 +38,11 @@ const PrekshaApp = () => {
 
   return (
     <div className="prf-container">
+      {/* FLOATING SPIRITUAL ORBS */}
+      <div className="prf-orb prf-orb-1"></div>
+      <div className="prf-orb prf-orb-2"></div>
+      <div className="prf-orb prf-orb-3"></div>
+
       {/* Navigation */}
       <nav className="prf-navbar">
         <div className="prf-logo">Cosmic Blueprint</div>

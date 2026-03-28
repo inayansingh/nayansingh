@@ -218,14 +218,18 @@
 }
 
 .radha-chat-header {
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(211, 116, 53, 0.15); /* Saffron tint border */
   position: relative;
   z-index: 10;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 }
 
 .radha-avatar-wrapper {
@@ -297,7 +301,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 251, 242, 0.6));
+  background: transparent; /* Let the ethereal outer wrapper glow through */
   scroll-behavior: smooth;
   overflow-anchor: auto;
 }
@@ -359,12 +363,15 @@
 
 .radha-chat-input-area {
   position: relative;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(211, 116, 53, 0.15);
   display: flex;
   gap: 1rem;
   align-items: flex-end;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
 }
 
 .radha-recharge-modal-overlay {

@@ -1,81 +1,112 @@
-/* PREKSHA RANA FOUNDATION: DIVINE GLASSMORPHISM */
+/* PREKSHA RANA FOUNDATION: LIGHT SPIRITUAL ETHEREAL THEME */
 :root {
-  --prf-indigo: #0B0C10;
-  --prf-midnight: #151828;
-  --prf-saffron: #B65A29;
-  --prf-saffron-light: #FF9B61;
-  --prf-gold: #CFB53B;
-  --prf-gold-dim: #9A8423;
-  --prf-text-light: #F4F4F6;
-  --prf-text-muted: #A1A3B1;
-  --prf-glass: rgba(255, 255, 255, 0.05);
-  --prf-glass-border: rgba(255, 255, 255, 0.1);
-  --prf-glass-strong: rgba(255, 255, 255, 0.12);
+  --prf-cream: #FFFBF2;
+  --prf-cream-alt: #FFF0D9;
+  --prf-saffron: #D37435;
+  --prf-saffron-light: #FFB37C;
+  --prf-gold: #C09A4D;
+  --prf-gold-dim: #DCD3B6;
+  --prf-pink: #F8B4CB;
+  --prf-pink-light: #FFDFEA;
+  
+  --prf-text-dark: #3E2723;
+  --prf-text-muted: #795548;
+  
+  --prf-glass: rgba(255, 255, 255, 0.65);
+  --prf-glass-border: rgba(255, 255, 255, 0.9);
 }
 
 .prf-container {
   min-height: 100vh;
-  background: var(--prf-indigo);
-  color: var(--prf-text-light);
+  background: var(--prf-cream);
+  color: var(--prf-text-dark);
   font-family: 'Inter', sans-serif;
-  /* Deep cosmic indigo fading into a warm sunrise saffron at the bottom */
-  background-image: radial-gradient(circle at top right, rgba(21, 24, 40, 0.9) 0%, rgba(11, 12, 16, 1) 60%), 
-                    linear-gradient(to bottom, transparent 40%, rgba(182, 90, 41, 0.3) 100%);
+  /* Divine morning sunlight gradient */
+  background-image: radial-gradient(circle at top center, rgba(255, 240, 217, 0.8) 0%, rgba(255, 251, 242, 1) 60%), 
+                    linear-gradient(to bottom, transparent 40%, rgba(211, 116, 53, 0.05) 100%);
   background-attachment: fixed;
   background-size: cover;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Starfield overlay simulation */
-.prf-container::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: 
-    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 2px),
-    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px);
-  background-size: 550px 550px, 350px 350px;
-  background-position: 0 0, 40px 60px;
-  opacity: 0.15;
+/* FLOATING SPIRITUAL ORBS (Mood Fixers) */
+.prf-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
   z-index: 0;
   pointer-events: none;
+  opacity: 0.5;
+  animation: floatOrb linear infinite alternate;
 }
 
-/* Reusable Divine Glass Panel */
+.prf-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--prf-saffron-light), transparent);
+  top: -100px; left: -150px;
+  animation-duration: 25s;
+}
+
+.prf-orb-2 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--prf-pink-light), transparent);
+  bottom: 10%; right: -200px;
+  animation-duration: 32s;
+  animation-delay: -10s;
+}
+
+.prf-orb-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--prf-gold-dim), transparent);
+  top: 40%; left: 10%;
+  animation-duration: 40s;
+  animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -60px) scale(1.1); }
+  100% { transform: translate(-30px, 40px) scale(0.95); }
+}
+
+/* Reusable Ethereal Light Glass Panel */
 .prf-glass-panel {
   background: var(--prf-glass);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--prf-glass-border);
   border-radius: 20px;
   padding: 3rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 2px 5px rgba(255, 255, 255, 0.7);
   z-index: 10;
   position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* NAVIGATION */
+/* STICKY NAVIGATION */
 .prf-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4rem;
-  background: rgba(11, 12, 16, 0.6);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  padding: 1.25rem 4rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   position: sticky;
   top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--prf-glass-border);
+  z-index: 9999; /* Fix to prevent clipping when scrolling */
+  border-bottom: 1px solid rgba(211, 116, 53, 0.15); /* Saffron tint */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  transition: background 0.3s ease;
 }
 
 .prf-logo {
   font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  color: var(--prf-text-light);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--prf-text-dark);
   text-transform: uppercase;
 }
 
@@ -90,7 +121,7 @@
   border: none;
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--prf-text-muted);
@@ -99,23 +130,23 @@
 }
 
 .prf-nav-links button:hover {
-  color: var(--prf-saffron-light);
+  color: var(--prf-saffron);
 }
 
-/* The Breathing Button */
+/* The Breathing Button (Light Theme) */
 .prf-nav-donate {
-  color: var(--prf-indigo) !important;
-  background: var(--prf-gold);
+  color: var(--prf-cream) !important;
+  background: linear-gradient(135deg, var(--prf-saffron), var(--prf-gold));
   padding: 0.6rem 2rem;
   border-radius: 30px;
   font-weight: 700 !important;
-  box-shadow: 0 0 15px rgba(207, 181, 59, 0.3);
+  box-shadow: 0 4px 15px rgba(211, 116, 53, 0.3);
   transition: all 0.4s ease;
 }
 
 .prf-nav-donate:hover {
-  background: #FFF;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 116, 53, 0.5);
 }
 
 /* HERO SECTION - CENTRALIZED PORTAL */
@@ -126,6 +157,7 @@
   min-height: 90vh;
   padding: 2rem;
   position: relative;
+  z-index: 10;
 }
 
 .prf-hero-card {
@@ -136,25 +168,25 @@
 }
 
 @keyframes etherealFadeIn {
-  from { opacity: 0; transform: translateY(30px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 
 .prf-sacred-icon {
   margin: 0 auto 1.5rem;
   color: var(--prf-gold);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .prf-hero-content h1 {
   font-family: 'Cinzel', serif;
-  font-size: 5rem;
+  font-size: 4.5rem;
   line-height: 1.1;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #FFF;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  background: linear-gradient(180deg, #FFFFFF 0%, #D8D8DF 100%);
+  color: var(--prf-text-dark);
+  text-shadow: 0 4px 15px rgba(255,255,255,0.8);
+  background: linear-gradient(180deg, var(--prf-text-dark) 0%, var(--prf-saffron) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -168,36 +200,38 @@
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
-/* Breathing primary CTA */
+/* Breathing primary CTA for Light Theme */
 .prf-btn-primary {
-  background: transparent;
-  color: var(--prf-gold);
-  border: 1px solid var(--prf-gold);
+  background: white;
+  color: var(--prf-saffron);
+  border: 1px solid rgba(211, 116, 53, 0.4);
   padding: 1.25rem 3.5rem;
   border-radius: 40px;
   font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(207, 181, 59, 0.15), inset 0 0 15px rgba(207, 181, 59, 0.15);
-  animation: slowBreathe 6s infinite ease-in-out;
+  box-shadow: 0 5px 20px rgba(211, 116, 53, 0.15), inset 0 0 0 rgba(211, 116, 53, 0);
+  animation: lightPulse 6s infinite ease-in-out;
   transition: all 0.4s;
 }
 
 .prf-btn-primary:hover {
-  background: rgba(207, 181, 59, 0.1);
-  box-shadow: 0 0 25px rgba(207, 181, 59, 0.4), inset 0 0 20px rgba(207, 181, 59, 0.2);
+  background: var(--prf-saffron);
+  color: white;
+  border-color: var(--prf-saffron);
+  box-shadow: 0 8px 30px rgba(211, 116, 53, 0.3);
   transform: scale(1.02);
 }
 
-@keyframes slowBreathe {
-  0% { box-shadow: 0 0 10px rgba(207,181,59,0.1), inset 0 0 10px rgba(207,181,59,0.1); }
-  50% { box-shadow: 0 0 35px rgba(207,181,59,0.4), inset 0 0 15px rgba(207,181,59,0.2); }
-  100% { box-shadow: 0 0 10px rgba(207,181,59,0.1), inset 0 0 10px rgba(207,181,59,0.1); }
+@keyframes lightPulse {
+  0% { box-shadow: 0 5px 15px rgba(211, 116, 53, 0.1); }
+  50% { box-shadow: 0 5px 35px rgba(211, 116, 53, 0.35); }
+  100% { box-shadow: 0 5px 15px rgba(211, 116, 53, 0.1); }
 }
 
 /* SECTION GLOBALS */
@@ -207,9 +241,9 @@
 }
 .prf-section-header h2 {
   font-family: 'Cinzel', serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 3rem;
-  color: #FFF;
+  color: var(--prf-text-dark);
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
 }
@@ -221,13 +255,13 @@
   line-height: 1.8;
 }
 
-/* AI SECTION WRAPPING (Isolating the Radha App) */
+/* AI SECTION WRAPPING */
 .prf-ai-section {
   padding: 6rem 4rem;
   position: relative;
-  z-index: 2;
-  border-top: 1px solid var(--prf-glass-border);
-  background: linear-gradient(to bottom, rgba(11, 12, 16, 0.8), rgba(21, 24, 40, 0.9));
+  z-index: 10;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  background: linear-gradient(to bottom, rgba(255, 251, 242, 0.8), rgba(255, 240, 217, 0.6));
 }
 
 .prf-ai-app-wrapper {
@@ -235,13 +269,14 @@
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255,255,255,0.05);
-  background: var(--radha-cream); /* CRITICAL: Keep light background inner box for Radha code */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); /* Soft Drop shadow */
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(25px);
+  border: 1px solid white;
   position: relative;
 }
 
-/* Override existing app card styles to fit inside new dark flow */
+/* Override existing app card styles to fit */
 .prf-ai-app-wrapper .radha-card {
   height: 700px;
   max-width: 100%;
@@ -255,7 +290,7 @@
 .prf-programs {
   padding: 8rem 4rem;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .prf-programs-grid {
@@ -271,25 +306,25 @@
   max-width: 400px;
   padding: 3rem 2rem;
   text-align: center;
-  transition: transform 0.4s ease;
 }
 
 .prf-program-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(207, 181, 59, 0.3);
+  border-color: white;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
 }
 
 .prf-program-card svg {
-  color: var(--prf-gold);
+  color: var(--prf-saffron);
   margin: 0 auto 1.5rem auto;
 }
 
 .prf-program-card h3 {
   font-family: 'Cinzel', serif;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 1rem;
-  color: #FFF;
+  color: var(--prf-text-dark);
 }
 
 .prf-program-card p {
@@ -300,9 +335,9 @@
 /* KARMIC EXCHANGE (DONATION) FUNNEL */
 .prf-donation-funnel {
   padding: 8rem 4rem;
-  background: linear-gradient(to bottom, transparent, rgba(182, 90, 41, 0.1));
+  background: linear-gradient(to bottom, transparent, rgba(211, 116, 53, 0.05));
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .prf-donation-container {
@@ -313,15 +348,15 @@
 
 .prf-donation-trigger h2 {
   font-family: 'Cinzel', serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 3rem;
-  color: var(--prf-gold);
+  color: var(--prf-text-dark);
   margin-bottom: 1rem;
 }
 
 .prf-emotional-line {
   font-size: 1.2rem;
-  color: var(--prf-text-light);
+  color: var(--prf-text-muted);
   margin-bottom: 3rem;
   line-height: 1.8;
 }
@@ -335,32 +370,35 @@
 }
 
 .prf-amt-btn {
-  background: rgba(255,255,255,0.03);
+  background: white;
   padding: 1.25rem 2.5rem;
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(211, 116, 53, 0.2);
   color: var(--prf-text-muted);
   cursor: pointer;
   transition: all 0.3s;
   font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
 .prf-amt-btn:hover {
-  background: rgba(255,255,255,0.1);
-  color: #FFF;
+  background: var(--prf-cream-alt);
+  color: var(--prf-text-dark);
+  border-color: var(--prf-saffron);
 }
 
 .prf-amt-btn.selected {
-  background: rgba(207, 181, 59, 0.2);
-  border-color: var(--prf-gold);
-  color: var(--prf-gold);
+  background: linear-gradient(135deg, var(--prf-saffron), var(--prf-gold));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 8px 20px rgba(211, 116, 53, 0.3);
 }
 
 .prf-btn-donate {
-  background: var(--prf-gold);
-  color: var(--prf-indigo);
+  background: linear-gradient(135deg, var(--prf-saffron), var(--prf-gold));
+  color: white;
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.1em;
@@ -370,7 +408,7 @@
   border: none;
   border-radius: 40px;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(207, 181, 59, 0.2);
+  box-shadow: 0 10px 30px rgba(211, 116, 53, 0.2);
   transition: all 0.4s;
   width: 100%;
   max-width: 400px;
@@ -379,8 +417,7 @@
 
 .prf-btn-donate:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(207, 181, 59, 0.4);
-  background: #FFF;
+  box-shadow: 0 15px 40px rgba(211, 116, 53, 0.4);
 }
 .prf-btn-donate:disabled {
   opacity: 0.5;
@@ -392,7 +429,7 @@
   gap: 1.5rem;
   color: var(--prf-text-muted);
   font-size: 0.85rem;
-  opacity: 0.7;
+  opacity: 0.8;
   flex-wrap: wrap;
   justify-content: center;
   text-transform: uppercase;
@@ -409,31 +446,31 @@
 .prf-donation-success h3 {
   font-family: 'Cinzel', serif;
   font-size: 2.5rem;
-  color: var(--prf-gold);
+  color: var(--prf-saffron);
   margin: 1.5rem 0;
 }
 
 .prf-blessing {
   font-style: italic;
   font-size: 1.2rem;
-  color: var(--prf-text-light);
+  color: var(--prf-text-muted);
   margin: 1.5rem 0 2rem;
 }
 
-/* FOOTER - COSMIC ELEGANCE */
+/* FOOTER - COSMIC ELEGANCE (Light Theme Compatible) */
 .prf-footer {
-  background: var(--prf-indigo);
+  background: #FFFDF8;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 6rem 4rem 3rem;
-  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(211, 116, 53, 0.1);
 }
 
-/* Ethereal glowing line at the top of the footer */
+/* Ethereal glowing line */
 .prf-footer::before {
   content: '';
   position: absolute;
@@ -442,11 +479,10 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--prf-gold), transparent);
-  box-shadow: 0 0 20px var(--prf-gold), 0 0 10px var(--prf-saffron);
+  box-shadow: 0 0 10px rgba(211, 116, 53, 0.2);
   opacity: 0.6;
 }
 
-/* Subtle moving cosmic haze at the bottom */
 .prf-footer-glow {
   position: absolute;
   bottom: -50%;
@@ -454,7 +490,7 @@
   transform: translateX(-50%);
   width: 150%;
   height: 100%;
-  background: radial-gradient(circle closest-side, rgba(182, 90, 41, 0.15), transparent);
+  background: radial-gradient(circle closest-side, rgba(211, 116, 53, 0.05), transparent);
   pointer-events: none;
   animation: cosmicHaze 15s ease-in-out infinite alternate;
   z-index: 0;
@@ -482,15 +518,11 @@
 .prf-footer-title {
   font-family: 'Cinzel', serif;
   font-size: 2.2rem;
-  color: var(--prf-text-light);
-  font-weight: 400;
-  letter-spacing: 0.15em;
+  color: var(--prf-text-dark);
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  background: linear-gradient(180deg, #FFFFFF 0%, #D8D8DF 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Delicate geometric separator */
@@ -521,19 +553,18 @@
   font-size: 1.25rem;
   line-height: 1.8;
   letter-spacing: 0.05em;
-  opacity: 0.8;
 }
 
 .prf-footer-bottom {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: rgba(255,255,255,0.4);
+  color: var(--prf-text-muted);
   font-size: 0.95rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-family: 'Inter', sans-serif;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(211, 116, 53, 0.1);
   padding-top: 2rem;
   width: 100%;
   max-width: 600px;
@@ -543,7 +574,7 @@
   .prf-hero-content h1 { font-size: 3rem; }
   .prf-hero { min-height: 80vh; padding: 1rem; }
   .prf-glass-panel { padding: 2rem 1.5rem; }
-  .prf-navbar { padding: 1.5rem; flex-direction: column; gap: 1.5rem; background: var(--prf-indigo); }
+  .prf-navbar { padding: 1.5rem; flex-direction: column; gap: 1.5rem; background: rgba(255,255,255,0.95); }
   .prf-nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
   .prf-programs { padding: 4rem 2rem; }
   .prf-ai-section { padding: 4rem 1rem; }
