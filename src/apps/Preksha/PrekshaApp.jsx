@@ -47,7 +47,7 @@ const PrekshaApp = () => {
 
       {/* Navigation */}
       <nav className="prf-navbar">
-        <div className="prf-logo">Cosmic Blueprint</div>
+        <div className="prf-logo">Preksha Rana Foundation</div>
         <div className="prf-nav-links">
           <button onClick={() => scrollToSection('home')}>Sanctuary</button>
           <button onClick={() => scrollToSection('ai')}>Sacred Guide</button>

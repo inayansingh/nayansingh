@@ -82,10 +82,9 @@
 }
 
 @media (min-width: 769px) {
-  .block-experience { grid-column: 1 / 2; grid-row: 1 / span 3; }
-  .block-publications { grid-column: 2 / 3; grid-row: 1; }
-  .block-skills { grid-column: 2 / 3; grid-row: 2; }
-  .block-volunteering { grid-column: 2 / 3; grid-row: 3; }
+  .block-experience { grid-column: 1 / 2; grid-row: 1 / span 2; }
+  .block-skills { grid-column: 2 / 3; grid-row: 1; }
+  .block-volunteering { grid-column: 2 / 3; grid-row: 2; }
 }
 
 /* Section styling */
@@ -185,20 +184,58 @@
   color: var(--accent-cyan);
   font-family: 'Fira Code', monospace;
 }
-/* Publication Card Styling */
+/* Publication Card Styling (Legacy removed, keeping base hover for other blocks) */
 .publication-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.publication-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(189, 0, 255, 0.1);
+/* -------------------------------------------
+   NEW ACADEMIC PUBLICATIONS STYLING
+----------------------------------------------*/
+.publications-academic-section {
+  padding: 0 2rem;
 }
 
-.publication-badge {
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.academic-publication-card {
+  padding: 60px 80px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
+.academic-publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 240, 255, 0.1);
+}
+
+.academic-title {
+  color: var(--text-primary);
+  font-family: inherit; 
+}
+
+.academic-text {
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+.academic-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .academic-publication-card {
+    padding: 30px 20px;
+  }
+}
+
 
 /* Tags */
 .skill-groups {

@@ -132,7 +132,20 @@ const PaperSpiritualAI = () => {
             </section>
             
             <section>
-              <h2>7. Conclusion</h2>
+              <h2>7. Project Architecture Expansions (Phase II)</h2>
+              <p>
+                In subsequent developmental phases, the application underwent significant architectural upgrades to better serve its target demographic:
+              </p>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '20px', marginBottom: '1.5rem', opacity: 0.9 }}>
+                 <li style={{ marginBottom: '0.75rem' }}><strong>Master Persona Integration:</strong> The system prompt was fundamentally rewritten to strictly adopt the persona of "Preksha Rana", an empathetic spiritual guide. This prevented the LLM from reverting to its base identity ("I am a large language model created by Google") and ensured all token outputs adhered to a strictly therapeutic, Vedic-aligned dialect.</li>
+                 <li style={{ marginBottom: '0.75rem' }}><strong>Generative Avatar Engineering:</strong> To bridge the "Uncanny Valley" and establish trust, physical photographic references of the persona were mapped through an image-to-image stable diffusion layer. The output—a hyper-realistic, ethereal rendering matching the exact UI aesthetic—was embedded as the literal face of the chat interface, unifying the visual and generative layers.</li>
+                 <li style={{ marginBottom: '0.75rem' }}><strong>Administrative Token Bypassing:</strong> To allow core maintainers unrestricted analysis of the generative pipelines without depleting the stateful Karmic Economy, a hardcoded <code>isUnlimitedUser</code> conditional bypass was hooked directly into the React authentication state, preventing the CashFree checkout interceptor from ever mounting for authorized clients.</li>
+                 <li><strong>The 'Light Spiritual Radha' Theme:</strong> The DOM abstraction was heavily refactored from a standard dashboard into a 'Digital Sanctuary'. This included deep CSS engineering for floating background orbs (utilizing mathematically smooth <code>@keyframes</code>), translucent frosted glass chat nodes, and warm morning-saffron gradients, proving that psychological color theory is just as critical as algorithmic intelligence in digital mental health applications.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2>8. Conclusion</h2>
               <p>
                 By synthesizing rigorous offline mathematical pipelines with emotionally-weighted prompt engineering and culturally-resonant Vedic frameworks, we achieve a highly scalable, serverless digital companion capable of genuine spiritual validation and structurally sound predictive guidance.
               </p>
