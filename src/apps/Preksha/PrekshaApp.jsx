@@ -162,19 +162,21 @@ const PrekshaApp = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER - COSMIC ELEGANCE */}
       <footer className="prf-footer">
+        <div className="prf-footer-glow"></div>
         <div className="prf-footer-content">
-          <div className="prf-footer-logo">
-            <h3>Preksha Rana Foundation</h3>
-            <p className="prf-footer-cta">
-              Dedicated to integrating advanced AI with ancient Vedic wisdom,<br/>
-              building safe sanctuaries for the mind.
+          <div className="prf-footer-brand">
+            <h3 className="prf-footer-title">Preksha Rana Foundation</h3>
+            <div className="prf-footer-separator"></div>
+            <p className="prf-footer-mantra">
+              "A sanctuary where ancient cosmic geometry<br/>
+              meets modern emotional resonance."
             </p>
           </div>
         </div>
         <div className="prf-footer-bottom">
-          <p>© {new Date().getFullYear()} Preksha Rana Foundation. Initiated by Nayan Kumar Singh. A sys.research_logs project.</p>
+          <p>© {new Date().getFullYear()} Preksha Rana Foundation.</p>
         </div>
       </footer>
     </div>
