@@ -64,60 +64,41 @@ const PaperSpiritualAI = () => {
               <h2>2. System Architecture</h2>
               <p>To achieve this synthesis between ancient logic and generative capacity, a strict multi-layered serverless pipeline was engineered.</p>
               
-              {/* Custom CSS Diagram */}
-              <div className="bg-glass-bg custom-diagram overflow-x-auto">
-                <div className="diagram-grid">
-                   {/* Row 1 */}
-                   <div className="diagram-row">
-                      <div className="node user-node">User Distress Query</div>
-                   </div>
-                   <div className="line-down"></div>
+              {/* Custom CSS Spine Diagram */}
+              <div className="bg-glass-bg custom-diagram">
+                <div className="diagram-spine">
+                   <div className="d-node user-node">User Distress Query</div>
+                   <div className="d-line"></div>
                    
-                   {/* Row 2 */}
-                   <div className="diagram-row">
-                      <div className="node react-node">Strict React Client & Onboarding Layer</div>
-                   </div>
+                   <div className="d-node react-node">Strict React Client & Onboarding Layer</div>
                    
-                   <div className="diagram-branch-row">
-                      <div className="line-branch-left"></div>
-                      <div className="line-branch-right"></div>
-                      <div className="node data-node w-half">Location / Time Geocoding</div>
-                      <div className="node data-node w-half">Emotional State Capture</div>
+                   <div className="d-split">
+                     <div className="d-split-col">
+                       <div className="d-node data-node mb-[28px]" style={{marginBottom: '28px'}}>Location / Time Geocoding</div>
+                       <div className="d-node api-node">Prokerala Vedic API (Backend)</div>
+                     </div>
+                     <div className="d-split-col">
+                       <div className="d-node data-node h-full">Emotional State Capture</div>
+                     </div>
                    </div>
                    
-                   {/* Row 4 */}
-                   <div className="diagram-branch-row">
-                      <div className="line-down absolute-left-20"></div>
-                      <div className="line-down absolute-right-20 dashed"></div>
-                      
-                      <div className="node api-node w-half">Prokerala Vedic API (Serverless Backend)</div>
-                      <div className="node empty-node w-half"></div>
+                   <div className="d-converge">
+                     <div className="d-converge-drop"></div>
                    </div>
-
-                   {/* Row 5 */}
-                   <div className="diagram-row relative">
-                      <div className="line-converge"></div>
-                      <div className="node injection-node">
-                         SYSTEM INJECTION: [Deterministic Planets] + [User Persona]
-                      </div>
+                   
+                   <div className="d-node injection-node">
+                      SYSTEM INJECTION: [Deterministic Planets] + [User Persona]
                    </div>
-                   <div className="line-down pull-up"></div>
-
-                   {/* Row 6 */}
-                   <div className="diagram-row z-10">
-                      <div className="node gemini-node">
-                         Gemini 2.5 Flash LLM
-                      </div>
+                   <div className="d-line"></div>
+                   
+                   <div className="d-node gemini-node">
+                      Gemini 2.5 Flash LLM
                    </div>
-                   <div className="line-down"></div>
-
-                   {/* Row 7 */}
-                   <div className="diagram-row">
-                      <div className="node ui-node">
-                         Glassmorphism UI Stream
-                      </div>
+                   <div className="d-line"></div>
+                   
+                   <div className="d-node ui-node">
+                      Glassmorphism UI Stream
                    </div>
-
                 </div>
               </div>
             </section>

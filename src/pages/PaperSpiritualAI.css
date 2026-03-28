@@ -192,93 +192,56 @@
 .custom-diagram {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  padding: 2rem;
+  padding: 3rem 1.5rem;
   border-radius: 16px;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
   overflow-x: auto;
 }
 
-.diagram-grid {
+.diagram-spine {
   display: flex;
   flex-direction: column;
-  position: relative;
-  min-width: 600px;
-}
-
-.diagram-row {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.diagram-branch-row {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
+  align-items: center;
+  min-width: 500px;
+  max-width: 650px;
   margin: 0 auto;
-  position: relative;
-  padding: 0 1rem;
 }
 
-.w-half {
-  width: 45%;
-  text-align: center;
-  font-size: 0.85rem;
-}
-
-.node {
-  padding: 12px 24px;
+.d-node {
+  padding: 14px 28px;
   border-radius: 8px;
   border: 1px solid var(--glass-border);
   background: rgba(255,255,255,0.8);
-  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
+  text-align: center;
   z-index: 2;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.user-node {
-  border-color: var(--text-muted);
-  font-weight: 700;
-}
-
-.react-node {
-  background: rgba(0, 136, 170, 0.08);
-  border-color: rgba(0, 136, 170, 0.3);
-  color: var(--accent-cyan);
-  font-weight: 500;
-}
-
-.api-node {
-  background: rgba(136, 0, 204, 0.08);
-  border-color: rgba(136, 0, 204, 0.3);
-  color: var(--accent-purple);
-  font-weight: 500;
-}
-
-.data-node {
-  background: rgba(0, 153, 68, 0.08);
-  border-color: rgba(0, 153, 68, 0.3);
-  color: var(--accent-green);
-}
+.user-node { border-color: var(--text-muted); font-weight: 700; color: var(--text-primary); }
+.react-node { background: rgba(0, 136, 170, 0.08); border-color: rgba(0, 136, 170, 0.3); color: var(--accent-cyan); font-weight: 600; }
+.api-node { background: rgba(136, 0, 204, 0.08); border-color: rgba(136, 0, 204, 0.3); color: var(--accent-purple); font-weight: 600; }
+.data-node { background: rgba(0, 153, 68, 0.08); border-color: rgba(0, 153, 68, 0.3); color: var(--accent-green); font-weight: 500; height: 100%; }
 
 .injection-node {
   background: rgba(136, 0, 204, 0.1);
   border-color: rgba(136, 0, 204, 0.4);
   color: var(--accent-purple);
   font-family: 'Fira Code', monospace;
-  font-size: 0.85rem;
-  width: 80%;
-  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .gemini-node {
   background: linear-gradient(90deg, rgba(0, 136, 170, 0.15), rgba(136, 0, 204, 0.15));
   border-color: var(--accent-cyan);
-  font-weight: 700;
-  font-size: 1.1rem;
-  width: 300px;
-  text-align: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--accent-cyan);
   box-shadow: 0 0 15px rgba(0, 136, 170, 0.1);
 }
 
@@ -286,97 +249,100 @@
   background: rgba(0, 153, 68, 0.1);
   border-color: var(--accent-green);
   color: var(--accent-green);
-  width: 300px;
-  text-align: center;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.empty-node {
-  visibility: hidden;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-/* Connecting Lines */
-.line-down {
+.d-line {
   width: 2px;
-  height: 24px;
+  height: 28px;
   background-color: var(--text-muted);
-  opacity: 0.25;
-  margin: 0 auto;
+  opacity: 0.3;
 }
 
-.pull-up {
+.d-split {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
   position: relative;
-  top: -8px;
-  z-index: 0;
+  padding-top: 20px;
+  border-top: 2px solid rgba(112, 112, 128, 0.3); /* The horizontal split line */
 }
 
-.absolute-left-20 {
-  position: absolute;
-  top: -24px;
-  left: 20%;
-  width: 2px;
-  height: 24px;
-  background-color: var(--text-muted);
-  opacity: 0.25;
-}
-
-.absolute-right-20 {
-  position: absolute;
-  top: -24px;
-  right: 20%;
-  width: 2px;
-  height: 24px;
-  background-color: transparent;
-  border-left: 2px dashed var(--text-muted);
-  opacity: 0.25;
-}
-
-.line-branch-left {
-  position: absolute;
-  top: -24px;
-  left: 20%;
-  width: 30%;
-  height: 24px;
-  border-left: 2px solid var(--text-muted);
-  border-top: 2px solid var(--text-muted);
-  opacity: 0.25;
-  border-top-left-radius: 8px;
-}
-
-.line-branch-right {
-  position: absolute;
-  top: -24px;
-  right: 20%;
-  width: 30%;
-  height: 24px;
-  border-right: 2px solid var(--text-muted);
-  border-top: 2px solid var(--text-muted);
-  opacity: 0.25;
-  border-top-right-radius: 8px;
-}
-
-.line-converge {
-  position: absolute;
-  top: -32px;
-  left: 20%;
-  width: 60%;
-  height: 24px;
-  border-bottom: 2px solid var(--text-muted);
-  opacity: 0.25;
-}
-
-.line-converge::after {
+/* Connect the vertical line to the horizontal split line exactly */
+.d-split::before {
   content: '';
   position: absolute;
-  top: 24px;
-  left: -2px;
-  height: 16px;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 2px;
-  background: var(--text-muted);
+  height: 28px;
+  background-color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.d-split-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Small drop lines connecting horizontal split to the nodes */
+.d-split-col::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background-color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.d-converge {
+  width: 100%;
+  height: 20px;
+  border-bottom: 2px solid rgba(112, 112, 128, 0.3);
+  position: relative;
+  margin-bottom: 28px;
+}
+
+/* Lines dropping from the split cols to the converge line */
+.d-converge::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 25%; /* align with left col */
+  width: 2px;
+  height: 20px;
+  background-color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.d-converge::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: 25%; /* align with right col */
+  width: 2px;
+  height: 20px;
+  background-color: var(--text-muted);
+  opacity: 0.3;
+}
+
+/* Drop line from converge down to injection */
+.d-converge-drop {
+  width: 2px;
+  height: 28px;
+  background-color: var(--text-muted);
+  opacity: 0.3;
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Mobile Responsiveness for Layout */
