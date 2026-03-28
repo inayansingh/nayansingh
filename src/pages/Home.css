@@ -82,9 +82,10 @@
 }
 
 @media (min-width: 769px) {
-  .block-experience { grid-column: 1 / 2; grid-row: 1 / span 2; }
-  .block-skills { grid-column: 2 / 3; grid-row: 1; }
-  .block-volunteering { grid-column: 2 / 3; grid-row: 2; }
+  .block-experience { grid-column: 1 / 2; grid-row: 1 / span 3; }
+  .block-publications { grid-column: 2 / 3; grid-row: 1; }
+  .block-skills { grid-column: 2 / 3; grid-row: 2; }
+  .block-volunteering { grid-column: 2 / 3; grid-row: 3; }
 }
 
 /* Section styling */
@@ -190,16 +191,12 @@
 }
 
 /* -------------------------------------------
-   NEW ACADEMIC PUBLICATIONS STYLING
+   NEW ACADEMIC PUBLICATIONS STYLING (In Grid)
 ----------------------------------------------*/
-.publications-academic-section {
-  padding: 0 2rem;
-}
-
 .academic-publication-card {
-  padding: 60px 80px;
-  border-radius: 16px;
-  background: var(--glass-bg);
+  padding: 35px 30px;
+  border-radius: 12px;
+  background: var(--bg-tertiary);
   border: 1px solid var(--glass-border);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }

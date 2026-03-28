@@ -73,6 +73,43 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Publications Section (Grid Placement + Academic Formatting) */}
+        <section className="publications-section glass-panel block-publications">
+          <div className="section-header">
+            <BookOpen className="accent-icon-alt text-accent-purple" size={24} />
+            <h3 className="font-mono text-xl">Publications_&_Research</h3>
+          </div>
+          
+          <div className="flex flex-col gap-6">
+            {userData.publications.map((pub, index) => (
+              <div key={index} className="academic-publication-card relative overflow-hidden group">
+                <div className="academic-badge font-mono text-xs flex items-center gap-2 mb-4 text-accent-purple uppercase tracking-widest">
+                  <Star size={14} className="fill-current" />
+                  <span>Featured Publication</span>
+                </div>
+                
+                <h4 className="academic-title text-2xl text-primary font-bold mb-4 leading-tight group-hover:text-accent-cyan transition-colors duration-500">
+                  {pub.title}
+                </h4>
+                
+                <div className="academic-desc-container my-5">
+                  <p className="academic-text text-secondary text-base leading-relaxed whitespace-pre-line">
+                    {pub.description}
+                  </p>
+                </div>
+                
+                <div className="pt-4 border-t border-glass-border overflow-hidden">
+                  <a href={pub.link} target="_blank" rel="noopener noreferrer" className="academic-btn btn btn-primary w-full justify-center mt-2 group-hover:shadow-[0_0_15px_rgba(189,0,255,0.4)] transition-all">
+                    <BookOpen size={16} />
+                    <span className="text-base">Acquire Publication</span>
+                    <ExternalLink size={14} className="ml-2 opacity-70" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Skills Section */}
         <section className="skills-section glass-panel block-skills">
           <div className="section-header">
@@ -145,43 +182,6 @@ const Home = () => {
           </div>
         </section>
       </div>
-
-      {/* Publications Section (Academic Scale) */}
-      <section className="publications-academic-section mt-16 mb-8 max-w-4xl mx-auto">
-        <div className="section-header justify-center mb-8 border-none">
-          <BookOpen className="accent-icon-alt text-accent-purple" size={28} />
-          <h3 className="font-mono text-3xl">Publications & Research</h3>
-        </div>
-        
-        <div className="flex flex-col gap-8">
-          {userData.publications.map((pub, index) => (
-            <div key={index} className="academic-publication-card glass-panel relative overflow-hidden group">
-              <div className="academic-badge font-mono text-sm flex items-center gap-2 mb-6 text-accent-purple uppercase tracking-widest">
-                <Star size={16} className="fill-current" />
-                <span>Featured Publication</span>
-              </div>
-              
-              <h4 className="academic-title text-3xl text-primary font-extrabold mb-6 leading-tight group-hover:text-accent-cyan transition-colors duration-500">
-                {pub.title}
-              </h4>
-              
-              <div className="academic-desc-container my-8">
-                <p className="academic-text text-secondary text-lg leading-relaxed whitespace-pre-line">
-                  {pub.description}
-                </p>
-              </div>
-              
-              <div className="pt-6 border-t border-glass-border overflow-hidden">
-                <a href={pub.link} target="_blank" rel="noopener noreferrer" className="academic-btn btn btn-primary mt-2">
-                  <BookOpen size={18} />
-                  <span className="text-lg">Acquire Publication</span>
-                  <ExternalLink size={16} className="ml-2 opacity-70" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
        {/* Recommendations Section */}
        <section className="recommendations-section mt-8">
