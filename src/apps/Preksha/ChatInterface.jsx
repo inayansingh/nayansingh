@@ -21,6 +21,11 @@ const ChatInterface = ({ userData }) => {
     localStorage.setItem('karmicTokens', karmicTokens);
   }, [karmicTokens]);
 
+  const isUnlimitedUser = 
+    userData?.fullName?.toLowerCase() === 'nayan kumar singh' || 
+    userData?.mobile?.replace(/\s+/g, '') === '+919958915070' ||
+    userData?.mobile === '9958915070';
+
   // Check for successful payment return
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -167,13 +172,16 @@ Use this data to frame your astrology insights. Speak directly to ${userData.ful
   }, [messages, isTyping]);
 
   const handleSend = async () => {
-    if (!inputVal.trim() || !chatSessionRef.current || karmicTokens <= 0) return;
+    if (!inputVal.trim() || !chatSessionRef.current || (!isUnlimitedUser && karmicTokens <= 0)) return;
 
     const userMsg = inputVal.trim();
     setInputVal('');
     
     // Optimistically add user message and deduct token
-    setKarmicTokens(prev => prev - 1);
+    if (!isUnlimitedUser) {
+      setKarmicTokens(prev => prev - 1);
+    }
+    
     const newMessages = [...messages, { role: 'user', text: userMsg }];
     setMessages(newMessages);
     setIsTyping(true);
@@ -222,7 +230,7 @@ Use this data to frame your astrology insights. Speak directly to ${userData.ful
 
   return (
     <div className="radha-chat-container">
-      {karmicTokens <= 0 && (
+      {!isUnlimitedUser && karmicTokens <= 0 && (
         <div className="radha-recharge-modal-overlay">
           <div className="radha-recharge-modal">
             <div className="recharge-icon">✨🪙✨</div>
@@ -250,7 +258,7 @@ Use this data to frame your astrology insights. Speak directly to ${userData.ful
         </div>
         <div className="radha-token-balance">
           <span className="token-icon">🪙</span>
-          <span className="token-text">Karmic Balance: {karmicTokens}</span>
+          <span className="token-text">Balance: {isUnlimitedUser ? '∞ (Admin)' : karmicTokens}</span>
         </div>
       </div>
 
@@ -303,14 +311,14 @@ Use this data to frame your astrology insights. Speak directly to ${userData.ful
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={karmicTokens > 0 ? "Pour your heart out here..." : "Out of Karmic Tokens..."}
+          placeholder={isUnlimitedUser || karmicTokens > 0 ? "Pour your heart out here..." : "Out of Karmic Tokens..."}
           rows={1}
-          disabled={karmicTokens <= 0}
+          disabled={!isUnlimitedUser && karmicTokens <= 0}
         />
         <button
           className="radha-send-btn"
           onClick={handleSend}
-          disabled={!inputVal.trim() || isTyping || karmicTokens <= 0}
+          disabled={!inputVal.trim() || isTyping || (!isUnlimitedUser && karmicTokens <= 0)}
         >
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </button>
