@@ -6,7 +6,7 @@ const appsData = [
   {
     name: "Preksha Rana Foundation",
     status: "online",
-    description: "A full-fledged NGO landing page featuring an emotionally intelligent virtual spiritual companion that offers Vedic kundali interpretation and guidance.",
+    description: "A highly responsive, serverless React application serving as a virtual spiritual companion for an NGO. Powered by the Gemini 2.5 Flash LLM, the architecture dynamically injects precision astrological facts into the system prompt by fetching real-time Vedic ephemeris transits and Dashas through a custom Prokerala REST API Node backend. The frontend utilizes custom glassmorphism UI components and incorporates a stateful 'Karmic Token' monetization economy seamlessly verified via intelligent CashFree payment URL redirect hooks.",
     model: "gemini-2.5-flash",
     demoLink: "/preksha",
     repoLink: "#"
