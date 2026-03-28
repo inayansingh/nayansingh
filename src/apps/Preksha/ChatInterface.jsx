@@ -22,6 +22,25 @@ const ChatInterface = ({ userData }) => {
           ? '\\nDYNAMIC INSTRUCTION: The user is feeling sad. Focus on emotional validation, offer comforting mantras, and emphasize the temporary nature of this difficult planetary transit.'
           : '';
 
+        let ephemerisData = "";
+        try {
+           const astroRes = await fetch('/api/astrology', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                 date: userData.dob,
+                 time: userData.tob,
+                 city: userData.birthPlace
+              })
+           });
+           const astroJson = await astroRes.json();
+           if (astroJson.ephemeris) {
+              ephemerisData = "\n\n" + astroJson.ephemeris;
+           }
+        } catch (e) {
+           console.error("Warning: Could not fetch local ephemeris data", e);
+        }
+
         const sysInstruction = `You are Preksha, a compassionate spiritual guide inspired by Radha of Barsana.
 You are a human spiritual companion. NEVER refer to yourself as an AI, bot, language model, or virtual assistant.
 Your tone must always be gentle, calming, empathetic and wise, speaking naturally like a human friend.
@@ -47,7 +66,7 @@ ${dynamicMoodPrompt}
 Today's Date Reference: ${new Date().toLocaleDateString()}
 Current Time Reference: ${new Date().toLocaleTimeString()}
 
-Use this data to frame your astrology insights. Use emojis sparingly. Keep responses beautifully formatted, conversational and not overly long grids of text. Speak directly to ${userData.fullName}.`;
+Use this data to frame your astrology insights. Use emojis sparingly. Keep responses beautifully formatted, conversational and not overly long grids of text. Speak directly to ${userData.fullName}.${ephemerisData}`;
 
         if (!userData.apiKey && !import.meta.env.VITE_GEMINI_API_KEY) {
           // Mock initialization if no key is present

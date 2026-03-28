@@ -1,0 +1,10 @@
+{
+  "id": "85891438-6da1-435a-8ace-24c91befb603",
+  "status": "error",
+  "errors": [
+    {
+      "title": "Client Error",
+      "detail": "No route found for \"GET https://api.prokerala.com/v2/astrology/dasha/vimshottari\""
+    }
+  ]
+}
