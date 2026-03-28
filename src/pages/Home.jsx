@@ -77,7 +77,7 @@ const Home = () => {
         <section className="publications-section glass-panel block-publications">
           <div className="section-header">
             <BookOpen className="accent-icon-alt text-accent-purple" size={24} />
-            <h3 className="font-mono text-xl">Publications_&_Research</h3>
+            <h3 className="font-mono text-xl">Publications</h3>
           </div>
           
           <div className="flex flex-col gap-6">

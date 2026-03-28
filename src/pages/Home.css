@@ -214,6 +214,7 @@
 
 .academic-text {
   font-size: 0.9rem; /* Matches Experience content */
+  text-align: justify;
   opacity: 0.9;
 }
 
