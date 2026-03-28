@@ -64,40 +64,34 @@ const PaperSpiritualAI = () => {
               <h2>2. System Architecture</h2>
               <p>To achieve this synthesis between ancient logic and generative capacity, a strict multi-layered serverless pipeline was engineered.</p>
               
-              {/* Custom CSS Spine Diagram */}
+              {/* Single Column Secure Architecture Diagram */}
               <div className="bg-glass-bg custom-diagram">
                 <div className="diagram-spine">
-                   <div className="d-node user-node">User Distress Query</div>
+                   <div className="d-node user-node border-2">User Distress Query</div>
                    <div className="d-line"></div>
                    
                    <div className="d-node react-node">Strict React Client & Onboarding Layer</div>
+                   <div className="d-line"></div>
                    
-                   <div className="d-split">
-                     <div className="d-split-col">
-                       <div className="d-node data-node mb-[28px]" style={{marginBottom: '28px'}}>Location / Time Geocoding</div>
-                       <div className="d-node api-node">Prokerala Vedic API (Backend)</div>
-                     </div>
-                     <div className="d-split-col">
-                       <div className="d-node data-node h-full">Emotional State Capture</div>
-                     </div>
-                   </div>
+                   <div className="d-node data-node w-full">Location Geocoding & Emotional Context Capture</div>
+                   <div className="d-line"></div>
                    
-                   <div className="d-converge">
-                     <div className="d-converge-drop"></div>
-                   </div>
+                   <div className="d-node api-node">Prokerala Vedic API (Serverless Math Engine)</div>
+                   <div className="d-line"></div>
                    
-                   <div className="d-node injection-node">
-                      SYSTEM INJECTION: [Deterministic Planets] + [User Persona]
+                   <div className="d-node injection-node shadow-md text-center py-4">
+                      <strong>SYSTEM INJECTION</strong><br/>
+                      [Deterministic Ephemeris] + [User Psychological Persona]
                    </div>
                    <div className="d-line"></div>
                    
-                   <div className="d-node gemini-node">
-                      Gemini 2.5 Flash LLM
+                   <div className="d-node gemini-node py-5">
+                      Gemini 2.5 Flash Neural Engine
                    </div>
                    <div className="d-line"></div>
                    
-                   <div className="d-node ui-node">
-                      Glassmorphism UI Stream
+                   <div className="d-node ui-node border-2 border-accent-green">
+                      Glassmorphism Divine UI Stream
                    </div>
                 </div>
               </div>
