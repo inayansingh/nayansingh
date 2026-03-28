@@ -88,17 +88,17 @@ const Home = () => {
                   <span>Featured Publication</span>
                 </div>
                 
-                <h4 className="academic-title text-primary font-bold mb-3 leading-tight group-hover:text-accent-cyan transition-colors duration-500">
+                <h4 className="academic-title text-primary font-bold mb-2 leading-tight group-hover:text-accent-cyan transition-colors duration-500">
                   {pub.title}
                 </h4>
                 
-                <div className="academic-desc-container my-4">
+                <div className="academic-desc-container mt-2 mb-3">
                   <p className="academic-text text-secondary text-justify leading-relaxed whitespace-pre-line">
                     {pub.description}
                   </p>
                 </div>
                 
-                <div className="pt-4 border-t border-glass-border overflow-hidden">
+                <div className="pt-3 border-t border-glass-border overflow-hidden">
                   <a href={pub.link} target="_blank" rel="noopener noreferrer" className="academic-btn btn btn-primary w-full justify-center mt-2 group-hover:shadow-[0_0_15px_rgba(189,0,255,0.4)] transition-all">
                     <BookOpen size={14} />
                     <span>Acquire Publication</span>
