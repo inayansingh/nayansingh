@@ -78,17 +78,68 @@
 @keyframes vantage-orb-drift  { from { transform: translate(0,0); } to { transform: translate(5%, 8%); } }
 @keyframes vantage-orb-drift2 { from { transform: translate(0,0); } to { transform: translate(-5%, -6%); } }
 
-/* Fine grid overlay */
+/* Fine dot overlay (kept subtle behind EKG) */
 .vantage-grid-bg {
   position: fixed;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.013) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.013) 1px, transparent 1px);
-  background-size: 38px 38px;
+  background-image: radial-gradient(rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
 }
+
+/* ---- EKG Background ---- */
+.v-ekg-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.v-ekg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;      /* 2× viewport so we can slide one full width */
+  height: 100%;
+  animation: ekg-scroll 8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ekg-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* slide one full panel = seamless loop */
+}
+
+/* Radial vignette so the EKG is strong in the middle, fades at top/bottom edges */
+.v-ekg-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      var(--v-bg) 0%,
+      transparent 18%,
+      transparent 82%,
+      var(--v-bg) 100%
+    );
+  pointer-events: none;
+}
+
+/* Left/right horizontal fade overlays */
+.v-ekg-fade-left,
+.v-ekg-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  pointer-events: none;
+  z-index: 1;
+}
+.v-ekg-fade-left  { left: 0;  background: linear-gradient(to right, var(--v-bg), transparent); }
+.v-ekg-fade-right { right: 0; background: linear-gradient(to left,  var(--v-bg), transparent); }
+
 
 .vantage-content {
   position: relative;

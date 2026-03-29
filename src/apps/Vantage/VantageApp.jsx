@@ -14,6 +14,116 @@ const TABS = [
   { id: 'rate',     label: 'Rate Calculator',     Icon: Calculator },
 ];
 
+// One EKG cycle = 300px wide, baseline at y=60
+// Two rows stacked vertically offset for depth
+const EKG_CYCLE = `
+  L 20,60 L 35,55 L 48,46 L 60,55 L 72,60
+  L 84,60 L 90,65 L 97,4 L 103,72 L 109,60
+  L 122,60 L 132,50 L 145,42 L 158,50 L 175,60
+  L 300,60
+`.trim();
+
+function buildEkgPath(cycles, yOffset) {
+  let d = `M 0,${yOffset + 60}`;
+  for (let i = 0; i < cycles; i++) {
+    // translate each cycle by 300px
+    const shifted = EKG_CYCLE.replace(/L (\d+\.?\d*),/g, (_, x) =>
+      `L ${parseFloat(x) + i * 300},`
+    );
+    // also fix the start M for cycle > 0
+    d += ' ' + shifted.replace(/L (\d+\.?\d*),(\d+\.?\d*)/,
+      (m, x, y) => `L ${parseFloat(x)},${parseFloat(y) + yOffset}`
+    );
+  }
+  return d;
+}
+
+function EkgBackground() {
+  const cycles = 14; // enough to fill wide screens
+  const width  = cycles * 300;
+
+  // Build two separate waveform paths at different vertical positions
+  const makeD = (yBase) => {
+    let d = `M 0,${yBase}`;
+    for (let i = 0; i < cycles; i++) {
+      const ox = i * 300;
+      d += ` L ${ox + 20},${yBase}`;
+      d += ` L ${ox + 35},${yBase - 5}`;
+      d += ` L ${ox + 48},${yBase - 14}`;
+      d += ` L ${ox + 60},${yBase - 5}`;
+      d += ` L ${ox + 72},${yBase}`;
+      d += ` L ${ox + 84},${yBase}`;
+      d += ` L ${ox + 90},${yBase + 5}`;
+      d += ` L ${ox + 97},${yBase - 56}`;
+      d += ` L ${ox + 103},${yBase + 12}`;
+      d += ` L ${ox + 109},${yBase}`;
+      d += ` L ${ox + 122},${yBase}`;
+      d += ` L ${ox + 132},${yBase - 10}`;
+      d += ` L ${ox + 145},${yBase - 18}`;
+      d += ` L ${ox + 158},${yBase - 10}`;
+      d += ` L ${ox + 175},${yBase}`;
+      d += ` L ${ox + 300},${yBase}`;
+    }
+    return d;
+  };
+
+  return (
+    <div className="v-ekg-bg" aria-hidden="true">
+      <svg
+        className="v-ekg-svg"
+        viewBox={`0 0 ${width} 300`}
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          {/* Glowing filter */}
+          <filter id="ekg-glow" x="-20%" y="-60%" width="140%" height="220%">
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+          {/* Vertical fade mask — brighter in middle, fades at edges */}
+          <linearGradient id="ekg-fade-x" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"    stopColor="white" stopOpacity="0" />
+            <stop offset="8%"    stopColor="white" stopOpacity="1" />
+            <stop offset="92%"   stopColor="white" stopOpacity="1" />
+            <stop offset="100%"  stopColor="white" stopOpacity="0" />
+          </linearGradient>
+          <mask id="ekg-mask">
+            <rect width={width} height="300" fill="url(#ekg-fade-x)" />
+          </mask>
+        </defs>
+
+        <g mask="url(#ekg-mask)">
+          {/* Primary row — brighter */}
+          <path
+            d={makeD(100)}
+            fill="none"
+            stroke="#10B981"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.18"
+            filter="url(#ekg-glow)"
+          />
+          {/* Secondary row — dimmer, offset */}
+          <path
+            d={makeD(210)}
+            fill="none"
+            stroke="#6366F1"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.09"
+          />
+        </g>
+      </svg>
+      {/* Edge fade overlays */}
+      <div className="v-ekg-fade-left" />
+      <div className="v-ekg-fade-right" />
+    </div>
+  );
+}
+
 export default function VantageApp() {
   const [tab, setTab]       = useState('deal');
 
@@ -44,7 +154,7 @@ export default function VantageApp() {
 
   return (
     <div className="vantage-shell">
-      <div className="vantage-grid-bg" />
+      <EkgBackground />
 
       {/* ---- Fixed Header ---- */}
       <header className="vantage-header">
