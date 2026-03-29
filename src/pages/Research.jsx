@@ -11,6 +11,14 @@ const researchData = [
     tags: ["LLM Prompting", "System Architecture", "Digital Mental Health"],
     link: "/research/architecture-of-empathy",
     internal: true
+  },
+  {
+    title: "Vantage: Engineering an Adversarial AI Talent Manager for the Creator Economy",
+    date: "March 2026",
+    description: "A technical deep-dive into a multi-module AI brand deal intelligence platform. Covers the prompt-chaining Fit Score Engine, dual-layer NLP contract scanner (Regex + Gemini LLM), and the mathematical Negotiation Floor Calculator based on CPM benchmarks, niche premiums, and usage rights surcharges.",
+    tags: ["Agentic AI", "NLP & Contract Law", "Creator Economy", "Prompt Engineering"],
+    link: "/research/vantage-ai-brand-deal-manager",
+    internal: true
   }
 ];
 
