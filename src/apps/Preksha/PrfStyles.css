@@ -298,14 +298,8 @@
 }
 
 /* Override existing app card styles to fit */
-.prf-ai-app-wrapper .radha-app-container {
-  min-height: auto;
-  height: 720px;
-  background-attachment: scroll; /* Prevent parallax clipping inside a fixed section wrapper */
-}
-
 .prf-ai-app-wrapper .radha-card {
-  height: 720px;
+  height: 700px;
   max-width: 100%;
   box-shadow: none;
   border: none;

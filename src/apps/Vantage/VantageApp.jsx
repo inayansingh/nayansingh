@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, FileText, Calculator, ArrowLeft, AlertCircle } from 'lucide-react';
 import './VantageStyles.css';
@@ -16,6 +16,13 @@ const TABS = [
 
 export default function VantageApp() {
   const [tab, setTab]       = useState('deal');
+
+  useEffect(() => {
+    const prev = document.title;
+    document.title = 'Vantage — AI Brand Deal Manager';
+    return () => { document.title = prev; };
+  }, []);
+
   const [apiKey, setApiKey] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState(null);

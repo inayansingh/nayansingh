@@ -10,6 +10,14 @@ const appsData = [
     model: "gemini-2.5-flash",
     demoLink: "/preksha",
     repoLink: "#"
+  },
+  {
+    name: "Vantage",
+    status: "online",
+    description: "An AI-driven Brand Deal Manager for digital influencers. Engineered with a ruthless 'Talent Manager' AI persona, it analyses brand-audience fit via a proprietary Fit Score Engine (prompt-chaining against Gemini 2.0 Flash), scans contracts for predatory clauses like Perpetuity and Work-for-Hire through a dual offline regex + LLM NLP pipeline, and calculates a negotiation-ready rate floor using CPM benchmarks, niche premiums, and usage rights surcharges.",
+    model: "gemini-2.0-flash",
+    demoLink: "/vantage",
+    repoLink: "#"
   }
 ];
 
