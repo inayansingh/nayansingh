@@ -6,12 +6,13 @@ import Research from './pages/Research';
 import AiApps from './pages/AiApps';
 import PrekshaApp from './apps/Preksha/PrekshaApp';
 import VantageApp from './apps/Vantage/VantageApp';
+import CreatorOSApp from './apps/CreatorOS/CreatorOSApp.jsx';
 import PaperSpiritualAI from './pages/PaperSpiritualAI';
 import PaperVantage from './pages/PaperVantage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 // Routes that have their own full-screen navigation headers
-const STANDALONE_ROUTES = ['/vantage', '/preksha'];
+const STANDALONE_ROUTES = ['/vantage', '/preksha', '/creator-os'];
 
 function AppShell() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ function AppShell() {
           <Route path="/apps" element={<AiApps />} />
           <Route path="/preksha" element={<PrekshaApp />} />
           <Route path="/vantage" element={<VantageApp />} />
+          <Route path="/creator-os" element={<CreatorOSApp />} />
         </Routes>
       </main>
     </div>
