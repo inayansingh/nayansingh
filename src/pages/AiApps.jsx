@@ -18,14 +18,6 @@ const appsData = [
     model: "gemini-2.0-flash",
     demoLink: "/vantage",
     repoLink: "#"
-  },
-  {
-    name: "CreatorOS",
-    status: "online",
-    description: "A full AI strategic partner for influencers — 28 features across 9 modules. Includes a 30-day Narrative Arc Builder, Confidence-to-Post Scorer, Golden Hour Predictor, Content DNA mapping, Hook Performance Lab, Persona Drift Alerts, Viral Moment Windows, Competitor Intelligence with Collab Matcher, Multi-platform Content Studio (1 idea → 5 formats), Brand Safety Scoring, and a dual-mode Growth Copilot powered by Gemini 2.0 Flash.",
-    model: "gemini-2.0-flash",
-    demoLink: "/creator-os",
-    repoLink: "#"
   }
 ];
 
